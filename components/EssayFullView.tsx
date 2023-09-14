@@ -70,14 +70,14 @@ export default function EssayFullView({
 						<AiFillCloseCircle className='h-10 w-10 fixed  hover:text-dark-green' />
 					</div>
 					{/* Adjust top margin for mobile */}
-					<h2 className='mt-12 md:mt-8 text-2xl sm:text-4xl font-bold font-source-sans-pro uppercase cursor-text'>
+					<h2 className='mt-12 md:mt-8 text-4xl  font-bold font-source-sans-pro uppercase cursor-text'>
 						{essay.title}
 					</h2>
-					<p className='text-xl text-primary-orange font-source-sans-pro capitalize cursor-text'>
+					<p className='text-2xl text-primary-orange font-source-sans-pro capitalize cursor-text'>
 						{essay.author}
 					</p>
 					<p
-						className='mt-4 text-md sm:text-lg font-source-serif-pro cursor-text whitespace-pre-line'
+						className='mt-4 text-md sm:text-lg font-serif cursor-text whitespace-pre-line'
 						dangerouslySetInnerHTML={{
 							__html: cleanContent,
 						}}
@@ -85,7 +85,7 @@ export default function EssayFullView({
 
 					{essay.description !== '' ? (
 						<h2 className='mt-20 text-2xl font-source-sans-pro font-bold'>
-							Process
+							Additional Information:
 						</h2>
 					) : (
 						''
@@ -100,16 +100,6 @@ export default function EssayFullView({
 					) : (
 						''
 					)}
-
-					<button
-						className='mt-4 text-blue-600'
-						onClick={(e) => {
-							e.stopPropagation();
-							onClose();
-						}}
-					>
-						Close
-					</button>
 				</div>
 			</motion.div>
 		</>
