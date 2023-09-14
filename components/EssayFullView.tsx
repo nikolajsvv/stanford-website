@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
 import DOMPurify from 'isomorphic-dompurify';
+import closeImg from '../public/close.svg';
+import Image from 'next/image';
+import { AiFillCloseCircle } from 'react-icons/ai';
 
 type Essay = {
 	id: string;
@@ -56,7 +59,16 @@ export default function EssayFullView({
 				initial='closed'
 				animate={isOpen ? 'open' : 'closed'}
 			>
-				<div className='bg-white p-4 rounded-md max-w-3xl w-full overflow-y-auto h-screen md:h-3/4'>
+				<div className='bg-white p-10 rounded-md max-w-3xl w-full overflow-y-auto h-screen md:h-3/4 relative'>
+					<div
+						className='top-0 right-10 p-5 absolute cursor-pointer'
+						onClick={(e) => {
+							e.stopPropagation();
+							onClose();
+						}}
+					>
+						<AiFillCloseCircle className='h-10 w-10 fixed  hover:text-dark-green' />
+					</div>
 					{/* Adjust top margin for mobile */}
 					<h2 className='mt-12 md:mt-8 text-2xl sm:text-4xl font-bold font-source-sans-pro uppercase cursor-text'>
 						{essay.title}
