@@ -33,6 +33,10 @@ export default function EssayFullView({
 	isOpen,
 	onClose,
 }: EssayFullViewProps) {
+	// sanitize the essay content & description
+	const sanitizedContent = DOMPurify.sanitize(essay.content);
+	const sanitizedDescription = DOMPurify.sanitize(essay.description);
+
 	const handleContainerClick = (e: any) => {
 		e.stopPropagation(); // Prevents the click from bubbling up
 	};
@@ -52,17 +56,18 @@ export default function EssayFullView({
 				initial='closed'
 				animate={isOpen ? 'open' : 'closed'}
 			>
-				<div className='bg-white p-4 rounded-md max-w-3xl w-full overflow-y-auto h-3/4'>
-					<h2 className='text-lg sm:text-4xl font-bold font-source-sans-pro uppercase cursor-text'>
+				<div className='bg-white p-4 rounded-md max-w-3xl w-full overflow-y-auto h-screen md:h-3/4'>
+					{/* Adjust top margin for mobile */}
+					<h2 className='mt-12 md:mt-8 text-2xl sm:text-4xl font-bold font-source-sans-pro uppercase cursor-text'>
 						{essay.title}
 					</h2>
 					<p className='text-xl text-primary-orange font-source-sans-pro capitalize cursor-text'>
 						{essay.author}
 					</p>
 					<p
-						className='mt-4 text-sm sm:text-lg font-source-serif-pro cursor-text whitespace-pre-line'
+						className='mt-4 text-md sm:text-lg font-source-serif-pro cursor-text whitespace-pre-line'
 						dangerouslySetInnerHTML={{
-							__html: DOMPurify.sanitize(essay.content),
+							__html: sanitizedContent,
 						}}
 					/>
 
@@ -77,7 +82,7 @@ export default function EssayFullView({
 						<p
 							className='mt-4 text-md sm:text-lg font-source-serif-pro cursor-text'
 							dangerouslySetInnerHTML={{
-								__html: DOMPurify.sanitize(essay.description),
+								__html: sanitizedDescription,
 							}}
 						/>
 					) : (
