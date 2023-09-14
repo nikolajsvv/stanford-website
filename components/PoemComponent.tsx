@@ -33,7 +33,7 @@ export default function PoemComponent({ poem, image }: PoemComponentProps) {
 
 	return (
 		<div
-			className='group relative overflow-hidden rounded-2xl shadow-md aspect-square cursor-pointer'
+			className='group relative overflow-hidden rounded-2xl shadow-md shadow-mud cursor-pointer w-96 min-h-[600px] '
 			onMouseEnter={() => setShowOverlay(true)}
 			onMouseLeave={() => setShowOverlay(false)}
 			onClick={() => {
@@ -47,17 +47,24 @@ export default function PoemComponent({ poem, image }: PoemComponentProps) {
 				height={image.height}
 				className='absolute inset-0 object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-105'
 			/>
-			{showOverlay && <span className='absolute inset-0 bg-black opacity-50' />}
+			{showOverlay ? (
+				<span className='absolute inset-0 bg-black opacity-50' />
+			) : (
+				<span className='absolute inset-0 bg-black opacity-20' />
+			)}
 
-			<div className='flex flex-col absolute inset-0 items-left justify-end text-beige p-3 md:p-5 space-y-2 sm:space-y-3'>
+			<div className='flex flex-col absolute inset-0 items-center justify-center text-beige p-3 md:p-5 transition-all duration-500 group-hover:justify-start'>
 				<h2 className='text-xl lg:text-2xl font-bold uppercase'>
 					{poem.title}
 				</h2>
+				<p className='text-lg text-primary-orange'>{poem.author}</p>
 				{showOverlay && (
-					<p
-						className='font-light text-base'
-						dangerouslySetInnerHTML={{ __html: cleanContent }}
-					/>
+					<div className='mt-4 overflow-y-auto max-h-[100%]'>
+						<p
+							className='font-light text-base overflow-auto'
+							dangerouslySetInnerHTML={{ __html: cleanContent }}
+						/>
+					</div>
 				)}
 			</div>
 		</div>

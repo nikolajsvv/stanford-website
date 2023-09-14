@@ -86,7 +86,7 @@ export default function EssayComponent({ essay, image }: EssayComponentProps) {
 				</p>
 			</div>
 			{showFullView && (
-				<div className='fixed inset-0  flex items-center justify-center z-50 pt-10 backdrop-blur-sm overlay'>
+				<div className='fixed inset-0 flex items-center justify-center z-50 pt-10 backdrop-blur-sm overlay'>
 					<EssayFullView
 						essay={essay}
 						isOpen={showFullView}
