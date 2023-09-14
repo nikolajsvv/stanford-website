@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import { useState } from 'react';
-import img1 from '@/public/images/essays/sun_through_trees.webp';
+import { useEffect, useState } from 'react';
+import DOMPurify from 'dompurify';
+import EssayFullView from './EssayFullView';
 
 type EssayComponentProps = {
 	essay: {
@@ -29,7 +30,18 @@ type EssayComponentProps = {
 export default function EssayComponent({ essay, image }: EssayComponentProps) {
 	const [showFullView, setShowFullView] = useState(false);
 
+	useEffect(() => {
+		return () => {
+			document.body.classList.remove('no-scroll');
+		};
+	}, []);
+
 	const handleViewClick = () => {
+		if (!showFullView) {
+			document.body.classList.add('no-scroll');
+		} else {
+			document.body.classList.remove('no-scroll');
+		}
 		setShowFullView(!showFullView);
 	};
 	return (
@@ -54,7 +66,12 @@ export default function EssayComponent({ essay, image }: EssayComponentProps) {
 					</span>
 				</h2>
 				<p className='font-normal'>{essay.author}</p>
-				<p className='font-light text-base truncate-line-4'>{essay.content}</p>
+				<p
+					className='font-light text-base truncate-line-4'
+					dangerouslySetInnerHTML={{
+						__html: DOMPurify.sanitize(essay.content),
+					}}
+				/>
 				<p
 					className='text-base sm:text-md text-right cursor-pointer font-semibold hover:font-bold hover:text-light-orange'
 					onClick={handleViewClick}
@@ -62,6 +79,13 @@ export default function EssayComponent({ essay, image }: EssayComponentProps) {
 					Read More
 				</p>
 			</div>
+			{showFullView && (
+				<EssayFullView
+					essay={essay}
+					isOpen={showFullView}
+					onClose={handleViewClick}
+				/>
+			)}
 		</div>
 	);
 }

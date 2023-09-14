@@ -22,3 +22,7 @@
 	-webkit-line-clamp: 5;
 	-webkit-box-orient: vertical;
 }
+.no-scroll {
+	overflow: hidden;
+	height: 100%;
+}
