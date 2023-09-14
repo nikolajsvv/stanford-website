@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { sanitize } from 'dompurify';
 import EssayFullView from './EssayFullView';
 
 type EssayComponentProps = {
@@ -29,8 +28,6 @@ type EssayComponentProps = {
 
 export default function EssayComponent({ essay, image }: EssayComponentProps) {
 	const [showFullView, setShowFullView] = useState(false);
-
-	const sanitizedContent = sanitize(essay.content);
 
 	useEffect(() => {
 		return () => {
@@ -71,7 +68,7 @@ export default function EssayComponent({ essay, image }: EssayComponentProps) {
 				<p
 					className='font-light text-base truncate-line-4'
 					dangerouslySetInnerHTML={{
-						__html: sanitizedContent,
+						__html: essay.content,
 					}}
 				/>
 				<p
