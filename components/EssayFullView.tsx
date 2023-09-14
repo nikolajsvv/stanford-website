@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import DOMPurify from 'dompurify';
+import DOMPurify from 'isomorphic-dompurify';
 
 type Essay = {
 	id: string;
@@ -36,6 +36,10 @@ export default function EssayFullView({
 	const handleContainerClick = (e: any) => {
 		e.stopPropagation(); // Prevents the click from bubbling up
 	};
+
+	const cleanContent = DOMPurify.sanitize(essay.content);
+	const cleanDescription = DOMPurify.sanitize(essay.content);
+
 	return (
 		<>
 			<motion.div
@@ -63,7 +67,7 @@ export default function EssayFullView({
 					<p
 						className='mt-4 text-md sm:text-lg font-source-serif-pro cursor-text whitespace-pre-line'
 						dangerouslySetInnerHTML={{
-							__html: essay.content,
+							__html: cleanContent,
 						}}
 					/>
 
@@ -78,7 +82,7 @@ export default function EssayFullView({
 						<p
 							className='mt-4 text-md sm:text-lg font-source-serif-pro cursor-text'
 							dangerouslySetInnerHTML={{
-								__html: essay.description,
+								__html: cleanDescription,
 							}}
 						/>
 					) : (
