@@ -69,7 +69,7 @@ export default function EssayFullView({
 					>
 						<AiFillCloseCircle className='h-10 w-10 fixed  hover:text-dark-green' />
 					</div>
-					{/* Adjust top margin for mobile */}
+
 					<h2 className='mt-12 md:mt-8 text-4xl  font-bold font-source-sans-pro uppercase cursor-text'>
 						{essay.title}
 					</h2>
