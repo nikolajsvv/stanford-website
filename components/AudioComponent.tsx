@@ -1,6 +1,6 @@
 // Purpose: Create a responsive audio component with an animated audio player using framer motion
 import { useEffect, useState, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import {
 	HiMiniSpeakerWave,
 	HiPlayCircle,
@@ -8,6 +8,7 @@ import {
 } from 'react-icons/hi2';
 import Image from 'next/image';
 import images from '../data/images.json';
+import AudioTranscriptDisplay from './AudioTranscriptDisplay';
 
 const content = {
 	id: 'audio001',
@@ -121,7 +122,7 @@ export default function AudioComponent({ audio }: AudioComponentProps) {
 			audioPlayer?.removeEventListener('loadedmetadata', handleLoadedMetadata);
 			audioPlayer?.removeEventListener('ended', handleAudioEnded);
 		};
-	}, []);
+	}, [duration]);
 
 	const playAudio = () => {
 		audioPlayerRef.current?.play();
@@ -155,79 +156,102 @@ export default function AudioComponent({ audio }: AudioComponentProps) {
 	const progressPercentage = (currentTime / duration) * 100;
 
 	const handleViewClick = () => {
+		if (!showFullView) {
+			document.body.classList.add('no-scroll');
+		} else {
+			document.body.classList.remove('no-scroll');
+		}
 		setShowFullView(!showFullView);
 	};
 
 	// Read from audio file to pull
 
 	return (
-		<motion.div
-			className='group relative w-full pb-[75%] overflow-hidden rounded-2xl shadow-md shadow-mud'
-			initial={{ opacity: 0 }}
-			whileInView={{ opacity: 1 }}
-			transition={{ duration: 1 }}
-			viewport={{ once: true }}
-		>
-			<audio src={audio.audioFilePath} ref={audioPlayerRef} />
+		<>
+			<motion.div
+				className='group relative w-full pb-[75%] overflow-hidden rounded-2xl shadow-md shadow-mud'
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
+				transition={{ duration: 1 }}
+				viewport={{ once: true }}
+			>
+				<audio src={audio.audioFilePath} ref={audioPlayerRef} />
 
-			<Image
-				src={audioImage.path}
-				alt={audioImage.description}
-				width={audioImage.width}
-				height={audioImage.height}
-				className='absolute inset-0 object-cover w-full h-full rounded-2xl transform transition-transform duration-500 group-hover:scale-105'
-			/>
-			<div className='absolute inset-0 bg-black opacity-50 rounded-2xl' />
+				<Image
+					src={audioImage.path}
+					alt={audioImage.description}
+					width={audioImage.width}
+					height={audioImage.height}
+					className='absolute inset-0 object-cover w-full h-full rounded-2xl transform transition-transform duration-500 group-hover:scale-105'
+				/>
+				<div className='absolute inset-0 bg-black opacity-50 rounded-2xl' />
 
-			<div className='absolute top-0 left-0 p-4 text-gray-400 flex items-center'>
-				{isPlaying ? (
-					<HiMiniSpeakerWave className='h-6 w-6 md:h-8 md:w-8 animate-pulse text-gray-300' />
-				) : (
-					<HiMiniSpeakerWave className='h-6 w-6 md:h-8 md:w-8 group-hover:scale-110 group-hover:text-gray-300' />
-				)}
-			</div>
-
-			<div className='absolute inset-0 items-center justify-center text-light-beige p-5 flex flex-col space-y-2 overflow-y-auto'>
-				<h2 className='uppercase text-beige font-sans font-bold tex t-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center'>
-					{title}
-				</h2>
-				<p className='text-light-orange text-xl'>{author}</p>
-				<div>
-					{!isPlaying ? (
-						<HiPlayCircle
-							className='h-12 w-12 text-white cursor-pointer rounded-full transition-all duration-300 hover:scale-125'
-							onClick={playAudio}
-						/>
+				<div className='absolute top-0 left-0 p-4 text-gray-400 flex items-center'>
+					{isPlaying ? (
+						<HiMiniSpeakerWave className='h-6 w-6 md:h-8 md:w-8 animate-pulse text-gray-300' />
 					) : (
-						<HiMiniPauseCircle
-							className='h-12 w-12 text-white cursor-pointer rounded-full transition-all duration-300 hover:scale-125'
-							onClick={pauseAudio}
-						/>
+						<HiMiniSpeakerWave className='h-6 w-6 md:h-8 md:w-8 group-hover:scale-110 group-hover:text-gray-300' />
 					)}
 				</div>
-				<p
-					className='cursor-pointer p-4 font-extralight text-beige hover:font-normal hover:text-light-orange'
-					onClick={handleViewClick}
+
+				<div className='absolute inset-0 items-center justify-center text-light-beige p-5 flex flex-col space-y-2 overflow-y-auto'>
+					<h2 className='uppercase text-beige font-sans font-bold tex t-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center'>
+						{audio.title}
+					</h2>
+					<p className='text-light-orange text-xl'>{audio.author}</p>
+					<div>
+						{!isPlaying ? (
+							<HiPlayCircle
+								className='h-12 w-12 text-white cursor-pointer rounded-full transition-all duration-300 hover:scale-125'
+								onClick={playAudio}
+							/>
+						) : (
+							<HiMiniPauseCircle
+								className='h-12 w-12 text-white cursor-pointer rounded-full transition-all duration-300 hover:scale-125'
+								onClick={pauseAudio}
+							/>
+						)}
+					</div>
+					<p
+						className='cursor-pointer p-4 font-extralight text-beige hover:font-normal hover:text-light-orange'
+						onClick={handleViewClick}
+					>
+						Transcript
+					</p>
+					<div className='text-beige flex justify-between w-full absolute bottom-4 font-extralight'>
+						<div className='text-left left-0 pl-2'>
+							{formatTime(currentTime)}
+						</div>
+						<div className='text-right right-0 pr-2'>
+							{formatTime(duration)}
+						</div>
+					</div>
+				</div>
+				<div
+					className='absolute bottom-0 left-0 w-full h-4 overflow-hidden rounded-b-3xl cursor-pointer'
+					ref={progressBarRef}
+					onClick={handleProgressBarClick}
 				>
-					Transcript
-				</p>
-				<div className='text-beige flex justify-between w-full absolute bottom-4 font-extralight'>
-					<div className='text-left left-0 pl-2'>{formatTime(currentTime)}</div>
-					<div className='text-right right-0 pr-2'>{formatTime(duration)}</div>
+					<div className='h-full bg-dark-green rounded-b-3xl'>
+						<motion.div
+							className='h-full bg-light-orange'
+							style={{ width: `${progressPercentage}%` }}
+						></motion.div>
+					</div>
 				</div>
-			</div>
-			<div
-				className='absolute bottom-0 left-0 w-full h-4 overflow-hidden rounded-b-3xl cursor-pointer'
-				ref={progressBarRef}
-				onClick={handleProgressBarClick}
-			>
-				<div className='h-full bg-dark-green rounded-b-3xl'>
-					<motion.div
-						className='h-full bg-light-orange'
-						style={{ width: `${progressPercentage}%` }}
-					></motion.div>
-				</div>
-			</div>
-		</motion.div>
+			</motion.div>
+
+			<AnimatePresence>
+				{showFullView && (
+					<div className='fixed inset-0 flex items-center justify-center z-50 pt-10 backdrop-blur-sm overlay'>
+						<AudioTranscriptDisplay
+							audio={audio}
+							isOpen={showFullView}
+							onClose={() => setShowFullView(false)}
+						/>
+					</div>
+				)}
+			</AnimatePresence>
+		</>
 	);
 }

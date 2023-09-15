@@ -1,20 +1,22 @@
 import { motion } from 'framer-motion';
-// import DOMPurify from 'isomorphic-dompurify';
 import { AiFillCloseCircle } from 'react-icons/ai';
 
-type Essay = {
+type Audio = {
 	id: string;
+	audioFileName: string;
+	audioFilePath: string;
 	title: string;
 	author: string;
-	content: string;
+	transcript: string;
 	description: string;
 	section: string;
 	imageID: string;
 	link: string;
+	additional: string;
 };
 
-type EssayFullViewProps = {
-	essay: Essay;
+type AudioTranscriptProps = {
+	audio: Audio;
 	isOpen: boolean;
 	onClose: () => void;
 };
@@ -28,19 +30,15 @@ const backdropVariants = {
 	open: { opacity: 0.5 },
 	closed: { opacity: 0 },
 };
-
-export default function EssayFullView({
-	essay,
+export default function AudioTranscriptDisplay({
+	audio,
 	isOpen,
 	onClose,
-}: EssayFullViewProps) {
+}: AudioTranscriptProps) {
 	// Prevents the click from bubbling up
 	const handleContainerClick = (e: any) => {
 		e.stopPropagation();
 	};
-
-	// const cleanContent = DOMPurify.sanitize(essay.content);
-	// const cleanDescription = DOMPurify.sanitize(essay.content);
 
 	return (
 		<>
@@ -66,39 +64,22 @@ export default function EssayFullView({
 							onClose();
 						}}
 					>
+						{' '}
 						<AiFillCloseCircle className='h-10 w-10 fixed  hover:text-dark-green' />
 					</div>
-
+					{/* Title and Author */}
 					<h2 className='mt-12 md:mt-8 text-4xl  font-bold font-source-sans-pro uppercase cursor-text'>
-						{essay.title}
+						{audio.title}
 					</h2>
 					<p className='text-2xl text-primary-orange font-source-sans-pro capitalize cursor-text'>
-						{essay.author}
+						{audio.author}
 					</p>
 					<p
 						className='mt-4 text-md sm:text-lg font-serif cursor-text whitespace-pre-line'
 						dangerouslySetInnerHTML={{
-							__html: essay.content,
+							__html: audio.transcript,
 						}}
 					/>
-
-					{essay.description !== '' ? (
-						<h2 className='mt-20 text-2xl font-source-sans-pro font-bold'>
-							Additional Information:
-						</h2>
-					) : (
-						''
-					)}
-					{essay.description !== '' ? (
-						<p
-							className='mt-4 text-md sm:text-lg font-source-serif-pro cursor-text'
-							dangerouslySetInnerHTML={{
-								__html: essay.description,
-							}}
-						/>
-					) : (
-						''
-					)}
 				</div>
 			</motion.div>
 		</>
