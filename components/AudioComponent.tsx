@@ -7,8 +7,7 @@ import {
 	HiMiniPauseCircle,
 } from 'react-icons/hi2';
 import Image from 'next/image';
-const audioFilePath = '/audio/gratitude-eli_rimer.mp3';
-import backgroundImage from '../public/images/essays/default.webp';
+import images from '../data/images.json';
 
 const content = {
 	id: 'audio001',
@@ -25,9 +24,10 @@ const content = {
 };
 
 type AudioComponentProps = {
-	poem: {
+	audio: {
 		id: string;
-		audioFile: string;
+		audioFileName: string;
+		audioFilePath: string;
 		title: string;
 		author: string;
 		transcript: string;
@@ -37,21 +37,24 @@ type AudioComponentProps = {
 		link: string;
 		additional: string;
 	};
-	image: {
-		id: string;
-		name: string;
-		path: string;
-		author: string;
-		description: string;
-		category: string;
-		link: string;
-		width: number;
-		height: number;
-	};
+};
+
+type audio = {
+	id: string;
+	audioFileName: string;
+	audioFilePath: string;
+	title: string;
+	author: string;
+	transcript: string;
+	description: string;
+	section: string;
+	imageID: string;
+	link: string;
+	additional: string;
 };
 
 // imports audioFile, content, backgroundImage
-export default function AudioComponent() {
+export default function AudioComponent({ audio }: AudioComponentProps) {
 	const { title, author } = content;
 
 	const audioPlayerRef = useRef<HTMLAudioElement>(null);
@@ -62,6 +65,26 @@ export default function AudioComponent() {
 
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [showFullView, setShowFullView] = useState(false);
+
+	// Set default poem image
+	const defaultImage = {
+		id: '',
+		name: 'default.webp',
+		path: '/images/essays/default.webp',
+		author: '',
+		description: 'Default image description',
+		category: 'default',
+		link: '',
+		width: 640,
+		height: 400,
+	};
+
+	// Grab image by audio file
+	const getImageByAudio = (audio: audio) => {
+		return images.find((image) => image.id === audio.imageID) || defaultImage;
+	};
+
+	const audioImage = getImageByAudio(audio);
 
 	useEffect(() => {
 		let audioPlayer = audioPlayerRef.current;
@@ -145,11 +168,13 @@ export default function AudioComponent() {
 			transition={{ duration: 1 }}
 			viewport={{ once: true }}
 		>
-			<audio src={audioFilePath} ref={audioPlayerRef} />
+			<audio src={audio.audioFilePath} ref={audioPlayerRef} />
 
 			<Image
-				src={backgroundImage}
-				alt={title}
+				src={audioImage.path}
+				alt={audioImage.description}
+				width={audioImage.width}
+				height={audioImage.height}
 				className='absolute inset-0 object-cover w-full h-full rounded-2xl transform transition-transform duration-500 group-hover:scale-105'
 			/>
 			<div className='absolute inset-0 bg-black opacity-50 rounded-2xl' />
