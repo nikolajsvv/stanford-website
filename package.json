@@ -28,6 +28,7 @@
 		"typescript": "5.2.2"
 	},
 	"devDependencies": {
-		"@types/react-scroll": "^1.8.7"
+		"@types/react-scroll": "^1.8.7",
+		"file-loader": "^6.2.0"
 	}
 }
