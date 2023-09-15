@@ -13,9 +13,7 @@ export default function DemoPage() {
 				<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4'>
 					{filteredPoems.map((poem) => {
 						const poemImage = getImageByPoem(poem);
-						return (
-							<PoemComponent key={poem.id} poem={poem} image={poemImage} />
-						);
+						return <PoemComponent key={poem.id} poem={poem} />;
 					})}
 				</div>
 			</div>

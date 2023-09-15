@@ -24,6 +24,32 @@ const content = {
 	additional: 'the_stanford_soundscape-maya_h_green.pdf',
 };
 
+type AudioComponentProps = {
+	poem: {
+		id: string;
+		audioFile: string;
+		title: string;
+		author: string;
+		transcript: string;
+		description: string;
+		section: string;
+		imageID: string;
+		link: string;
+		additional: string;
+	};
+	image: {
+		id: string;
+		name: string;
+		path: string;
+		author: string;
+		description: string;
+		category: string;
+		link: string;
+		width: number;
+		height: number;
+	};
+};
+
 // imports audioFile, content, backgroundImage
 export default function AudioComponent() {
 	const { title, author } = content;
@@ -39,13 +65,9 @@ export default function AudioComponent() {
 
 	useEffect(() => {
 		let audioPlayer = audioPlayerRef.current;
-		console.log(audioPlayer);
+
 		const handleTimeUpdate = () => {
 			const current = audioPlayer?.currentTime || 0;
-			const total = duration || audioPlayer?.duration || 1; // to avoid division by zero
-			const progressPercentage = (current / total) * 100;
-
-			console.log(`Progress: ${progressPercentage}%`); // Debug
 
 			setCurrentTime(current);
 
@@ -59,7 +81,6 @@ export default function AudioComponent() {
 			if (!duration && audioPlayer?.duration) {
 				setDuration(audioPlayer.duration);
 			}
-			console.log(`Duration updated: ${audioPlayer!.duration}`);
 			setCurrentTime(audioPlayer!.currentTime);
 		};
 
@@ -108,14 +129,13 @@ export default function AudioComponent() {
 		audioPlayerRef.current!.currentTime = seekTime;
 	};
 
-	const progressBarWidthPercentage =
-		duration !== 0 ? (currentTime / duration) * 100 : 0;
-
 	const progressPercentage = (currentTime / duration) * 100;
 
 	const handleViewClick = () => {
 		setShowFullView(!showFullView);
 	};
+
+	// Read from audio file to pull
 
 	return (
 		<motion.div
@@ -143,10 +163,10 @@ export default function AudioComponent() {
 			</div>
 
 			<div className='absolute inset-0 items-center justify-center text-light-beige p-5 flex flex-col space-y-2 overflow-y-auto'>
-				<h2 className='uppercase font-sans font-bold text-xl sm:text-2xl lg:text-4xl text-center'>
+				<h2 className='uppercase text-beige font-sans font-bold tex t-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center'>
 					{title}
 				</h2>
-				<p className='text-light-orange text-sm md:text-md'>{author}</p>
+				<p className='text-light-orange text-xl'>{author}</p>
 				<div>
 					{!isPlaying ? (
 						<HiPlayCircle

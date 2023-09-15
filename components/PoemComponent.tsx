@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { useState } from 'react';
+import images from '../data/images.json';
 // import DOMPurify from 'isomorphic-dompurify';
 
 type PoemComponentProps = {
@@ -13,24 +14,44 @@ type PoemComponentProps = {
 		imageID: string;
 		link: string;
 	};
-	image: {
-		id: string;
-		name: string;
-		path: string;
-		author: string;
-		description: string;
-		category: string;
-		link: string;
-		width: number;
-		height: number;
-	};
 };
 
-export default function PoemComponent({ poem, image }: PoemComponentProps) {
+type poem = {
+	id: string;
+	title: string;
+	author: string;
+	content: string;
+	description: string;
+	section: string;
+	imageID: string;
+	link: string;
+};
+
+export default function PoemComponent({ poem }: PoemComponentProps) {
 	const [showOverlay, setShowOverlay] = useState(false);
 	const [showDescription, setShowDescription] = useState(false);
 
 	// const cleanContent = DOMPurify.sanitize(poem.content);
+
+	// Set default poem image
+	const defaultImage = {
+		id: '',
+		name: 'default.webp',
+		path: '/images/essays/default.webp',
+		author: '',
+		description: 'Default image description',
+		category: 'default',
+		link: '',
+		width: 640,
+		height: 400,
+	};
+
+	// Grab image by poem
+	const getImageByPoem = (poem: poem) => {
+		return images.find((image) => image.id === poem.imageID) || defaultImage;
+	};
+
+	const poemImage = getImageByPoem(poem);
 
 	const handleDescriptionToggle = (event: any) => {
 		event.stopPropagation(); // This prevents the event from bubbling up
@@ -56,10 +77,10 @@ export default function PoemComponent({ poem, image }: PoemComponentProps) {
 			onClick={handleParentDivClick}
 		>
 			<Image
-				src={image.path}
-				alt={image.description}
-				width={image.width}
-				height={image.height}
+				src={poemImage.path}
+				alt={poemImage.description}
+				width={poemImage.width}
+				height={poemImage.height}
 				className='absolute inset-0 object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-105'
 			/>
 
