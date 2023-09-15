@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import DOMPurify from 'isomorphic-dompurify';
+// import DOMPurify from 'isomorphic-dompurify';
 import closeImg from '../public/close.svg';
 import Image from 'next/image';
 import { AiFillCloseCircle } from 'react-icons/ai';
@@ -40,8 +40,8 @@ export default function EssayFullView({
 		e.stopPropagation(); // Prevents the click from bubbling up
 	};
 
-	const cleanContent = DOMPurify.sanitize(essay.content);
-	const cleanDescription = DOMPurify.sanitize(essay.content);
+	// const cleanContent = DOMPurify.sanitize(essay.content);
+	// const cleanDescription = DOMPurify.sanitize(essay.content);
 
 	return (
 		<>
@@ -79,7 +79,7 @@ export default function EssayFullView({
 					<p
 						className='mt-4 text-md sm:text-lg font-serif cursor-text whitespace-pre-line'
 						dangerouslySetInnerHTML={{
-							__html: cleanContent,
+							__html: essay.content,
 						}}
 					/>
 
@@ -94,7 +94,7 @@ export default function EssayFullView({
 						<p
 							className='mt-4 text-md sm:text-lg font-source-serif-pro cursor-text'
 							dangerouslySetInnerHTML={{
-								__html: cleanDescription,
+								__html: essay.description,
 							}}
 						/>
 					) : (

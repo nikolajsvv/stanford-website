@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import EssayFullView from './EssayFullView';
-import DOMPurify from 'isomorphic-dompurify';
+// import DOMPurify from 'isomorphic-dompurify';
 
 type EssayComponentProps = {
 	essay: {
@@ -45,7 +45,7 @@ export default function EssayComponent({ essay, image }: EssayComponentProps) {
 		setShowFullView(!showFullView);
 	};
 
-	const cleanContent = DOMPurify.sanitize(essay.content);
+	// const cleanContent = DOMPurify.sanitize(essay.content);
 	return (
 		<div className='group relative overflow-hidden rounded-2xl aspect-square shadow-md shadow-mud '>
 			<Image
@@ -75,7 +75,7 @@ export default function EssayComponent({ essay, image }: EssayComponentProps) {
 				<p
 					className='font-extralight font-serif text-base truncate-line-4'
 					dangerouslySetInnerHTML={{
-						__html: cleanContent,
+						__html: essay.content,
 					}}
 				/>
 				<p
