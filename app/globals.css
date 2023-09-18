@@ -26,3 +26,16 @@
   overflow: hidden;
   height: 100%;
 }
+
+.transparent-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.transparent-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3); /* Adjust to your preferred opacity */
+  border-radius: 5px;
+}
+
+.transparent-scrollbar::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.1); /* Adjust to your preferred opacity */
+}

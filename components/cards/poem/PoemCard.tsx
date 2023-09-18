@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 export interface IPoemCard {
   id: string;
   title: string;
@@ -11,14 +10,7 @@ export interface IPoemCard {
   link: string;
 }
 
-const PoemCard: React.FC<IPoemCard> = ({
-  id,
-  title,
-  author,
-  content,
-  description,
-  imageID,
-}) => {
+const PoemCard: React.FC<IPoemCard> = ({ title, author, content }) => {
   // Set default poem image
   const defaultImage = {
     id: "",
@@ -33,7 +25,7 @@ const PoemCard: React.FC<IPoemCard> = ({
   };
 
   return (
-    <div className="group relative overflow-hidden rounded-2xl shadow-md shadow-mud cursor-pointer h-[40rem]">
+    <div className="group relative overflow-hidden rounded-2xl shadow-md shadow-mud cursor-pointer h-[40rem] w-1/3">
       <Image
         src={defaultImage.path}
         alt={defaultImage.description}
@@ -42,10 +34,17 @@ const PoemCard: React.FC<IPoemCard> = ({
         className="absolute inset-0 object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-105"
       />
       <span className="absolute inset-0 bg-black opacity-50" />
-      <div className="flex flex-col absolute inset-0 items-center justify-center text-beige p-3 md:p-5 transform transition-all duration-500 group-hover:justify-start text-center">
-        <h2 className="text-3xl lg:text-4xl font-bold uppercase">{title}</h2>
-        <p className="text-xl text-primary-orange">{author}</p>
+      <div className="flex flex-col absolute inset-0 items-center text-beige p-3 md:p-5 text-center transform transition-transform duration-500 translate-y-1/3 group-hover:translate-y-0">
+        <h2 className="font-sans text-3xl lg:text-4xl font-bold uppercase">
+          {title}
+        </h2>
+        <p className="text-xl text-primary-orange font-serif">{author}</p>
+        <p
+          className="font-serif hidden group-hover:inline font-light text-base md:text-md lg:text-lg text-center transofrm transition-all duration-500 overflow-auto transparent-scrollbar w-full"
+          dangerouslySetInnerHTML={{ __html: content }}
+        ></p>
       </div>
+      <p className="absolute bottom-0 left-0 right-0">Descriptoon</p>
     </div>
   );
 };
