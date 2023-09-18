@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@types/node": "20.6.0",
@@ -30,7 +32,17 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.4.2",
+    "@storybook/addon-interactions": "^7.4.2",
+    "@storybook/addon-links": "^7.4.2",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.4.2",
+    "@storybook/nextjs": "^7.4.2",
+    "@storybook/react": "^7.4.2",
+    "@storybook/testing-library": "^0.2.1",
     "@types/react-scroll": "^1.8.7",
-    "file-loader": "^6.2.0"
+    "eslint-plugin-storybook": "^0.6.13",
+    "file-loader": "^6.2.0",
+    "storybook": "^7.4.2"
   }
 }
