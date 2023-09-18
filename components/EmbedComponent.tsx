@@ -1,10 +1,8 @@
-import Image from "next/image";
 import { useState, useEffect } from "react";
-import { AiFillPlayCircle } from "react-icons/ai";
-import VideoFullView from "./VideoFullView";
+import EmbedFullView from "./EmbedFullView";
 
-type VideoComponentProps = {
-  video: {
+type EmbedComponentProps = {
+  embed: {
     id: string;
     title: string;
     author: string;
@@ -12,12 +10,12 @@ type VideoComponentProps = {
     description: string;
     section: string;
     imageID: string;
+    type: string;
     link: string;
   };
 };
 
-export default function VideoComponent({ video }: VideoComponentProps) {
-  const [showDescription, setShowDescription] = useState(false);
+export default function EmbedComponent({ embed }: EmbedComponentProps) {
   const [showFullView, setShowFullView] = useState(false);
 
   useEffect(() => {
@@ -48,41 +46,56 @@ export default function VideoComponent({ video }: VideoComponentProps) {
     height: 400,
   };
 
-  return (
-    <div className="group relative overflow-hidden rounded-2xl shadow-md shadow-mud cursor-default h-[20rem] w-1/3 bg-mud">
-      <Image
-        src={defaultImage.path}
-        alt={defaultImage.description}
-        width={defaultImage.width}
-        height={defaultImage.height}
-        className="object-cover w-full h-full"
-      />
+  const videoUrl = new URL(embed.link);
+  const video_id = videoUrl.searchParams.get("v");
+  const embedVideoUrl = `https://www.youtube.com/embed/${video_id}`;
 
-      <div className="flex flex-col absolute bottom-0 bg-gray-100 text-mud w-full p-3 text-left h-3/5">
-        <AiFillPlayCircle
+  return (
+    <div className="group relative overflow-hidden rounded-2xl shadow-md shadow-mud cursor-default h-[30rem] w-full bg-mud">
+      {embed.type === "video" && (
+        <iframe
+          src={`${embedVideoUrl}?autoplay=0&controls=0&modestbranding=1&rel=0`}
+          width="100%"
+          height="100%"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          className="object-cover h-3/5 w-full"
+        ></iframe>
+      )}
+      {embed.type === "iframe" && (
+        <iframe
+          src={embed.link}
+          width="100%"
+          height="100%"
+          className="object-cover h-3/5 w-full"
+        ></iframe>
+      )}
+
+      <div className="flex flex-col absolute bottom-0 bg-gray-100 text-mud w-full p-3 text-left h-2/5">
+        {/* <AiFillPlayCircle
           onClick={handleViewClick}
           className="absolute top-0 right-5 h-12 w-12 -translate-y-5 text-dark-green cursor-pointer drop-shadow-lg hover:text-primary-orange"
-        />
+        /> */}
         <h2 className="text-lg font-semibold font-sans uppercase pr-10">
-          {video.title}
+          {embed.title}
         </h2>
         <p className="text-md font-semilight font-sans text-primary-orange">
-          {video.author}
+          {embed.author}
         </p>
         <p className="text-sm font-light font-serif truncate-line-4">
-          {video.description}
-        </p>
-        <p
-          className="bottom-0 right-0 text-left hover:font-semibold cursor-pointer font-sans"
-          onClick={handleViewClick}
-        >
-          Read More
+          {embed.description}
         </p>
       </div>
+      <p
+        className="text-mud absolute bottom-1 right-5 text-right font-semibold hover:font-bold cursor-pointer font-sans "
+        onClick={handleViewClick}
+      >
+        Learn More
+      </p>
       {showFullView && (
         <div className="fixed inset-0 flex items-center justify-center z-50 pt-10 backdrop-blur-sm overlay">
-          <VideoFullView
-            content={video}
+          <EmbedFullView
+            content={embed}
             isOpen={showFullView}
             onClose={handleViewClick}
           />

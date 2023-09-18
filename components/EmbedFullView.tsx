@@ -9,10 +9,11 @@ type Content = {
   description: string;
   section: string;
   imageID: string;
+  type: string;
   link: string;
 };
 
-type VideoFullViewProps = {
+type EmbedFullViewProps = {
   content: Content;
   isOpen: boolean;
   onClose: () => void;
@@ -28,11 +29,11 @@ const backdropVariants = {
   closed: { opacity: 0 },
 };
 
-export default function VideoFullViewComponent({
+export default function EmbedFullViewComponent({
   content,
   isOpen,
   onClose,
-}: VideoFullViewProps) {
+}: EmbedFullViewProps) {
   // Prevents the click from bubbling up
   const handleContainerClick = (e: any) => {
     e.stopPropagation();
@@ -41,9 +42,9 @@ export default function VideoFullViewComponent({
   // const cleanContent = DOMPurify.sanitize(content.content);
   // const cleanDescription = DOMPurify.sanitize(content.content);
 
-  const url = new URL(content.link);
-  const video_id = url.searchParams.get("v");
-  const embedUrl = `https://www.youtube.com/embed/${video_id}`;
+  const videoUrl = new URL(content.link);
+  const video_id = videoUrl.searchParams.get("v");
+  const embedVideoUrl = `https://www.youtube.com/embed/${video_id}`;
 
   return (
     <>
@@ -78,14 +79,21 @@ export default function VideoFullViewComponent({
           <p className="text-2xl text-primary-orange font-source-sans-pro capitalize cursor-text">
             {content.author}
           </p>
-          <iframe
-            src={embedUrl}
-            width="100%"
-            height="360"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            className="mx-auto"
-          ></iframe>
+
+          {/* Check type to display appropriate content (video, iframe) */}
+          {content.type === "video" && (
+            <iframe
+              src={embedVideoUrl}
+              width="100%"
+              height="360"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="mx-auto"
+            ></iframe>
+          )}
+          {content.type === "iframe" && (
+            <iframe src={content.link} width="100%" height="360"></iframe>
+          )}
           <p
             className="mt-4 text-md sm:text-lg font-serif cursor-text whitespace-pre-line"
             dangerouslySetInnerHTML={{

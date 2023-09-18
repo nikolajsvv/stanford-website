@@ -100,7 +100,7 @@ export default function EssayComponent({ essay }: EssayComponentProps) {
           }}
         />
         <p
-          className="text-base sm:text-md text-right cursor-pointer font-semibold hover:text-light-orange "
+          className="text-base sm:text-md text-right cursor-pointer font-semibold hover:text-light-orange"
           onClick={handleViewClick}
         >
           Read More

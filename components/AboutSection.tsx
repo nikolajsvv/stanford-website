@@ -61,14 +61,16 @@ export default function AboutSection() {
       </section>
       {/* Image with first content */}
       <div className="relative">
-        <motion.div className="flex flex-col md:flex-row justify-center items-center w-full h-1/2 relative md:sticky md:top-0 bg-dark-green text-beige">
-          <div className="w-full md:w-1/2">
+        <motion.div className="flex flex-col md:flex-row justify-center items-center w-full relative md:sticky md:top-0 bg-dark-green text-beige">
+          <div className="w-full md:w-1/2 flex-shrink-0">
             {sustainabilityImage && (
               <Image
                 src={sustainabilityImage.path}
                 alt={sustainabilityImage?.description}
-                width={800}
-                height={800}
+                width={sustainabilityImage.width || 1000}
+                height={sustainabilityImage.height || 1000}
+                layout="responsive"
+                className="object-cover w-full h-full"
               />
             )}
           </div>
@@ -87,8 +89,10 @@ export default function AboutSection() {
               <Image
                 src={sustainabilityImage.path}
                 alt={sustainabilityImage?.description}
-                width={800}
-                height={800}
+                width={sustainabilityImage.width || 1000}
+                height={sustainabilityImage.height || 1000}
+                layout="responsive"
+                className="object-cover w-full h-full"
               />
             )}
           </div>

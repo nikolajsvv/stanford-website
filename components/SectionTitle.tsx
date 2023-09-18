@@ -12,7 +12,7 @@ export default function SectionTitle({ sectionInfo }: Props) {
 
   return (
     <div
-      className="group flex flex-col lg:flex-row justify-evenly items-stretch inset-0 bg-no-repeat bg-center bg-cover overflow-hidden shadow-md shadow-mud max-h-[700px] min-h-[500px]"
+      className="group flex flex-col lg:flex-row justify-evenly items-stretch inset-0 bg-no-repeat bg-center bg-cover overflow-hidden shadow-md shadow-mud max-h-[700px] min-h-[500px] cursor-default"
       style={{
         backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(/images/sectionTitle/sectionTitleImage.webp)`,
       }}
@@ -24,8 +24,8 @@ export default function SectionTitle({ sectionInfo }: Props) {
           </span>
         </h1>
       </div>
-      <div className="w-full lg:w-3/5 flex justify-center items-center bg-dark-green bg-opacity-70 shadow-md p-3 md:p-5 ">
-        <p className="text-beige text-sm sm:text-md md:text-lg lg:text-xl py-12 lg:py-0">
+      <div className="w-full lg:w-3/5 flex justify-center items-center bg-dark-green bg-opacity-70 shadow-md p-3 md:p-5 group-hover:bg-opacity-90">
+        <p className="font-light text-beige text-sm sm:text-md md:text-lg lg:text-xl py-12 lg:py-0">
           {content}
         </p>
       </div>
