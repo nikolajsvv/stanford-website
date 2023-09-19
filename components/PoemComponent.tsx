@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import images from "../data/images.json";
+import PoemFullViewComponent from "./PoemFullView";
 // import DOMPurify from 'isomorphic-dompurify';
 
 type PoemComponentProps = {
@@ -28,8 +29,7 @@ type poem = {
 };
 
 export default function PoemComponent({ poem }: PoemComponentProps) {
-  const [showOverlay, setShowOverlay] = useState(false);
-  const [showDescription, setShowDescription] = useState(false);
+  const [showFullView, setShowFullView] = useState(false);
 
   // const cleanContent = DOMPurify.sanitize(poem.content);
 
@@ -53,30 +53,32 @@ export default function PoemComponent({ poem }: PoemComponentProps) {
 
   const poemImage = getImageByPoem(poem);
 
-  const handleDescriptionToggle = (event: any) => {
-    event.stopPropagation(); // This prevents the event from bubbling up
-    setShowDescription(!showDescription);
-  };
+  useEffect(() => {
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, []);
 
-  const handleParentDivClick = (event: any) => {
-    event.stopPropagation();
-
-    if (!showDescription) {
-      // Implement expand or redirect logic here
+  const handleViewClick = () => {
+    if (!showFullView) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
     }
+    setShowFullView(!showFullView);
   };
 
   return (
-    <div className="group relative overflow-hidden rounded-2xl shadow-md shadow-mud h-[30rem]">
+    <div className="flex items-center justify-center group relative overflow-hidden rounded-2xl shadow-md shadow-mud h-[30rem]">
       <Image
-        src={defaultImage.path}
-        alt={defaultImage.description}
-        width={defaultImage.width}
-        height={defaultImage.height}
+        src={poemImage.path}
+        alt={poemImage.description}
+        width={poemImage.width}
+        height={poemImage.height}
         className="absolute inset-0 object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-105"
       />
       <span className="absolute inset-0 bg-black opacity-50" />
-      <div className="flex flex-col absolute inset-0 items-center text-beige p-3 md:p-5 text-center transform transition-transform duration-500 translate-y-1/3 group-hover:translate-y-0">
+      <div className="flex flex-col absolute inset-0 items-center text-beige p-3 mb-7 md:mb-10 md:p-5 text-center transform transition-transform duration-500 translate-y-1/3 group-hover:translate-y-0">
         <h2 className="text-3xl lg:text-4xl font-bold uppercase">
           {poem.title}
         </h2>
@@ -90,9 +92,21 @@ export default function PoemComponent({ poem }: PoemComponentProps) {
       </div>
 
       {poem.description && (
-        <p className="text-beige bg-mud bg-opacity-30 absolute bottom-0 left-0 p-2 hover:font-semibold hover:bg-opacity-50 hover:cursor-pointer">
+        <p
+          onClick={handleViewClick}
+          className="text-center w-full text-beige bg-mud bg-opacity-30 absolute bottom-0 p-2 hover:font-semibold hover:bg-opacity-50 hover:cursor-pointer"
+        >
           Description
         </p>
+      )}
+      {showFullView && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 pt-10 backdrop-blur-sm overlay">
+          <PoemFullViewComponent
+            content={poem}
+            isOpen={showFullView}
+            onClose={handleViewClick}
+          />
+        </div>
       )}
     </div>
   );

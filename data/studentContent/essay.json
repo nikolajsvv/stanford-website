@@ -7,7 +7,8 @@
     "description": "lorem ipsum dolor sit amet",
     "section": "where are we",
     "imageID": "img004",
-    "link": ""
+    "link": "",
+    "span": 1
   },
   {
     "id": "essay002",
@@ -17,7 +18,8 @@
     "description": "",
     "section": "where are we",
     "imageID": "img004",
-    "link": ""
+    "link": "",
+    "span": 1
   },
   {
     "id": "essay003",
@@ -27,7 +29,8 @@
     "description": "lorem ipsum dolor sit amet",
     "section": "where are we",
     "imageID": "img001",
-    "link": ""
+    "link": "",
+    "span": 1
   },
   {
     "id": "essay004",
@@ -37,6 +40,7 @@
     "description": "lorem ipsum dolor sit amet",
     "section": "where are we",
     "imageID": "img001",
-    "link": ""
+    "link": "",
+    "span": 1
   }
 ]

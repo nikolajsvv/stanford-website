@@ -1,14 +1,10 @@
 "use client";
-import AudioComponent from "@/components/AudioComponent";
 import audio from "../../data/studentContent/audio.json";
 import embed from "../../data/studentContent/embed.json";
 import EmbedComponent from "@/components/EmbedComponent";
 
 export default function DemoPage() {
   // Filters content by section
-  const filteredAudio = audio.filter(
-    (audios) => audios.section === "how do we make sense of it all"
-  );
   const filteredEmbed = embed.filter(
     (embeds) => embeds.section === "how do we make sense of it all"
   );

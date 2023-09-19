@@ -13,12 +13,7 @@ export interface IVideoCard {
   url: string;
 }
 
-const VideoCard: React.FC<IVideoCard> = ({
-  title,
-  author,
-  description,
-  url,
-}) => {
+const VideoCard: React.FC<IVideoCard> = ({ title, author, description }) => {
   // Set default poem image
   const defaultImage = {
     id: "",
@@ -33,10 +28,6 @@ const VideoCard: React.FC<IVideoCard> = ({
   };
 
   const [showDescription, setShowDescription] = useState(false);
-
-  const handleButtonClick = () => {
-    setShowDescription(!showDescription);
-  };
 
   return (
     <div className="group relative overflow-hidden rounded-2xl shadow-md shadow-mud cursor-default h-[20rem] w-1/3 bg-mud">

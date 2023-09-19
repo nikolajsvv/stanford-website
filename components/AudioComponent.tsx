@@ -179,10 +179,12 @@ export default function AudioComponent({ audio }: AudioComponentProps) {
         </div>
 
         <div className="absolute inset-0 items-center justify-center text-light-beige p-5 flex flex-col space-y-2 overflow-y-auto">
-          <h2 className="uppercase text-beige font-sans font-bold tex t-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center">
+          <h2 className="uppercase text-beige font-sans font-bold text-2xl md:text-3xl lg:text-4xl text-center">
             {audio.title}
           </h2>
-          <p className="text-light-orange text-xl">{audio.author}</p>
+          <p className="font-semibold text-primary-orange text-xl">
+            {audio.author}
+          </p>
           <div>
             {!isPlaying ? (
               <HiPlayCircle

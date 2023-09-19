@@ -33,19 +33,6 @@ export default function EmbedComponent({ embed }: EmbedComponentProps) {
     setShowFullView(!showFullView);
   };
 
-  // Set default essay image
-  const defaultImage = {
-    id: "",
-    name: "default.webp",
-    path: "/images/essays/default.webp",
-    author: "",
-    description: "Default image description",
-    category: "default",
-    link: "",
-    width: 640,
-    height: 400,
-  };
-
   const videoUrl = new URL(embed.link);
   const video_id = videoUrl.searchParams.get("v");
   const embedVideoUrl = `https://www.youtube.com/embed/${video_id}`;
@@ -74,19 +61,12 @@ export default function EmbedComponent({ embed }: EmbedComponentProps) {
       )}
 
       <div className="flex flex-col absolute bottom-0 bg-gray-100 text-mud w-full p-3 md:p-5 text-left h-2/5">
-        {/* <AiFillPlayCircle
-          onClick={handleViewClick}
-          className="absolute top-0 right-5 h-12 w-12 -translate-y-5 text-dark-green cursor-pointer drop-shadow-lg hover:text-primary-orange"
-        /> */}
-        {/* <h2 className="text-lg font-semibold font-sans uppercase pr-10">
-          {embed.title}
-        </h2> */}
         <h2 className="text-xl lg:text-2xl font-bold uppercase">
           <span className="bg-gradient-to-r from-green-300 to-green-200 bg-[length:0px_5px] bg-left-bottom bg-no-repeat duration-500 hover:bg-[length:100%_10px] group-hover:bg-[length:100%_8px]">
             {embed.title}
           </span>
         </h2>
-        <p className="font-normal text-primary-orange text-lg">
+        <p className="font-semibold text-primary-orange text-lg">
           {embed.author}
         </p>
         <p className="text-sm font-light font-serif truncate-line-4">
