@@ -55,11 +55,11 @@ export default function WhereAreWeSection() {
         <SectionTitle sectionInfo={titleInfo} />
       </motion.div>
       <div className="px-4 md:px-8 lg:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-3 md:p-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-3 md:p-5">
           {filteredEssay.map((essay) => {
             let spanClass = essay.span ? `col-span-${essay.span}` : "";
             return (
-              <div key={essay.id} className={`p-2 ${spanClass}`}>
+              <div key={essay.id} className={` ${spanClass}`}>
                 <EssayComponent essay={essay} />
               </div>
             );
@@ -67,7 +67,7 @@ export default function WhereAreWeSection() {
           {filteredEmbed.map((embed) => {
             let spanClass = embed.span ? `col-span-${embed.span}` : "";
             return (
-              <div key={embed.id} className={`p-2 ${spanClass}`}>
+              <div key={embed.id} className={`${spanClass}`}>
                 <EmbedComponent embed={embed} />
               </div>
             );
@@ -76,7 +76,7 @@ export default function WhereAreWeSection() {
           {filteredPoem.map((poem) => {
             let spanClass = poem.span ? `col-span-${poem.span}` : "";
             return (
-              <div key={poem.id} className={`p-2 ${spanClass}`}>
+              <div key={poem.id} className={` ${spanClass}`}>
                 <PoemComponent poem={poem} />
               </div>
             );
@@ -84,7 +84,7 @@ export default function WhereAreWeSection() {
           {filteredAudio.map((audio) => {
             let spanClass = audio.span ? `col-span-${audio.span}` : "";
             return (
-              <div key={audio.id} className={`p-2 ${spanClass}`}>
+              <div key={audio.id} className={` ${spanClass}`}>
                 <AudioComponent audio={audio} />
               </div>
             );
