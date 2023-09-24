@@ -74,7 +74,7 @@ export default function EmbedComponent({ embed }: EmbedComponentProps) {
         </p>
       </div>
       <p
-        className="text-mud absolute bottom-1 right-5 text-right font-semibold hover:font-bold hover:text-primary-green cursor-pointer font-sans "
+        className="text-beige absolute bottom-1 right-5 text-right font-semibold hover:font-bold hover:text-light-orange cursor-pointer font-sans "
         onClick={handleViewClick}
       >
         Learn More

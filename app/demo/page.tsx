@@ -1,12 +1,11 @@
 "use client";
-import audio from "../../data/studentContent/audio.json";
-import embed from "../../data/studentContent/embed.json";
-import EmbedComponent from "@/components/EmbedComponent";
+import portrait from "../../data/studentContent/portrait.json";
+import PortraitComponent from "@/components/PortraitComponent";
 
 export default function DemoPage() {
   // Filters content by section
-  const filteredEmbed = embed.filter(
-    (embeds) => embeds.section === "how do we make sense of it all"
+  const filteredPortrait = portrait.filter(
+    (portraits) => portraits.section === "where are we"
   );
 
   return (
@@ -16,8 +15,17 @@ export default function DemoPage() {
           return <AudioComponent key={audio.id} audio={audio} />;
         })} */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 ">
-          {filteredEmbed.map((embed) => {
-            return <EmbedComponent key={embed.id} embed={embed} />;
+          {filteredPortrait.map((portrait) => {
+            let spanClass = portrait.span ? `col-span-${portrait.span}` : "";
+            let spanRowClass = portrait.span ? `row-span-${portrait.span}` : "";
+            return (
+              <div
+                key={portrait.id}
+                className={` ${spanClass} ${spanRowClass}`}
+              >
+                <PortraitComponent key={portrait.id} portrait={portrait} />
+              </div>
+            );
           })}
         </div>
       </div>

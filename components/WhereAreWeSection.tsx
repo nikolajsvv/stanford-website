@@ -36,13 +36,6 @@ export default function WhereAreWeSection() {
 
   const filteredPoem = poem.filter((poems) => poems.section === "where are we");
 
-  const mixedContent = [
-    ...filteredEssay.map((item) => ({ ...item, type: "essay" })),
-    ...filteredEmbed.map((item) => ({ ...item, type: "embed" })),
-    ...filteredPoem.map((item) => ({ ...item, type: "poem" })),
-    ...filteredAudio.map((item) => ({ ...item, type: "audio" })),
-  ];
-
   return (
     <section id="where-are-we" className="py-8 mx-auto">
       <motion.div

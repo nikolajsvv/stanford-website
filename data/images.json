@@ -42,5 +42,93 @@
     "link": "https://unsplash.com/photos/0td83wpjVEI",
     "width": 640,
     "height": 426
+  },
+  {
+    "id": "img005",
+    "name": "surfing.jpg",
+    "path": "/images/essays/surfing.jpg",
+    "author": "Silas Baisch",
+    "description": "Surfer in blue waves",
+    "category": "where are we",
+    "link": "https://unsplash.com/photos/L78RstAZuTY",
+    "width": 640,
+    "height": 426
+  },
+  {
+    "id": "img006",
+    "name": "forest.jpg",
+    "path": "/images/essays/forest.jpg",
+    "author": "Irina Iriser",
+    "description": "Forest",
+    "category": "where are we",
+    "link": "https://unsplash.com/photos/2Y4dE8sdhlc",
+    "width": 640,
+    "height": 426
+  },
+  {
+    "id": "img007",
+    "name": "art-museum.jpg",
+    "path": "/images/essays/art-museum.jpg",
+    "author": "Diogo Fagundes",
+    "description": "art museum",
+    "category": "where are we",
+    "link": "https://unsplash.com/photos/XvQkiEkLrss",
+    "width": 640,
+    "height": 426
+  },
+  {
+    "id": "img008",
+    "name": "forest-fire.jpg",
+    "path": "/images/essays/forest-fire.jpg",
+    "author": "Matt Howard",
+    "description": "forest fire",
+    "category": "where are we",
+    "link": "https://unsplash.com/photos/eAKDzK4lo4o",
+    "width": 640,
+    "height": 426
+  },
+  {
+    "id": "img009",
+    "name": "hot-sun.jpg",
+    "path": "/images/essays/hot-sun.jpg",
+    "author": "Scott Goodwill",
+    "description": "sun over hills",
+    "category": "where are we",
+    "link": "https://unsplash.com/photos/7KrWmnpRafw",
+    "width": 640,
+    "height": 426
+  },
+  {
+    "id": "img010",
+    "name": "wind.jpg",
+    "path": "/images/essays/wind.jpg",
+    "author": "Saad Chaudhry",
+    "description": "dandelion in wind",
+    "category": "how do we make sense of it all",
+    "link": "https://unsplash.com/photos/YNM4KStg78I",
+    "width": 640,
+    "height": 426
+  },
+  {
+    "id": "img011",
+    "name": "earth.jpg",
+    "path": "/images/essays/earth.jpg",
+    "author": "NASA",
+    "description": "earth",
+    "category": "how do we make sense of it all",
+    "link": "https://unsplash.com/photos/vhSz50AaFAs",
+    "width": 640,
+    "height": 426
+  },
+  {
+    "id": "img012",
+    "name": "technology.jpg",
+    "path": "/images/essays/technology.jpg",
+    "author": "Alexandre Debiève",
+    "description": "microchips",
+    "category": "how do we make sense of it all",
+    "link": "https://unsplash.com/photos/FO7JIlwjOtU",
+    "width": 640,
+    "height": 426
   }
 ]
