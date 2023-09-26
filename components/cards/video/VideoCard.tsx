@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useState } from "react";
 import { AiFillPlayCircle } from "react-icons/ai";
 
 export interface IVideoCard {
@@ -26,8 +25,6 @@ const VideoCard: React.FC<IVideoCard> = ({ title, author, description }) => {
     width: 640,
     height: 400,
   };
-
-  const [showDescription, setShowDescription] = useState(false);
 
   return (
     <div className="group relative overflow-hidden rounded-2xl shadow-md shadow-mud cursor-default h-[20rem] w-1/3 bg-mud">

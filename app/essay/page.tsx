@@ -1,6 +1,6 @@
 "use client";
 import EssayComponent from "@/components/EssayComponent";
-import essays from "../../data/studentContent/essays.json";
+import essays from "../../data/studentContent/essay.json";
 
 export default function DemoPage() {
   // Filters content by section

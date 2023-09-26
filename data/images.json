@@ -130,5 +130,16 @@
     "link": "https://unsplash.com/photos/FO7JIlwjOtU",
     "width": 640,
     "height": 426
+  },
+  {
+    "id": "img013",
+    "name": "civilization.jpg",
+    "path": "/images/essays/civilization.jpg",
+    "author": "Greg Rosenke",
+    "description": "a globe of earth",
+    "category": "how did we get here",
+    "link": "https://unsplash.com/photos/3ULMRQZ5APA",
+    "width": 640,
+    "height": 426
   }
 ]

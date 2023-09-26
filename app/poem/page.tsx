@@ -1,5 +1,5 @@
 "use client";
-import poems from "../../data/studentContent/poems.json";
+import poems from "../../data/studentContent/poem.json";
 import PoemComponent from "@/components/PoemComponent";
 
 export default function DemoPage() {
