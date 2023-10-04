@@ -61,15 +61,17 @@ export default function EmbedComponent({ embed }: EmbedComponentProps) {
       )}
 
       <div className="flex flex-col absolute bottom-0 bg-gradient-to-t from-mud to-dark-green text-beige w-full p-3 md:p-5 text-left h-2/5">
-        <h2 className="text-xl lg:text-2xl font-bold uppercase">
-          <span className="bg-gradient-to-r from-green-300 to-green-200 bg-[length:0px_5px] bg-left-bottom bg-no-repeat duration-500 hover:bg-[length:100%_10px] group-hover:bg-[length:100%_8px]">
-            {embed.title}
-          </span>
-        </h2>
-        <p className="font-semibold text-primary-orange text-lg">
-          {embed.author}
-        </p>
-        <p className="text-sm font-light font-serif truncate-line-4">
+        <div className="space-y-1">
+          <h2 className="text-xl lg:text-2xl font-bold uppercase">
+            <span className="bg-gradient-to-r from-green-300 to-green-200 bg-[length:0px_5px] bg-left-bottom bg-no-repeat duration-500 hover:bg-[length:100%_10px] group-hover:bg-[length:100%_8px]">
+              {embed.title}
+            </span>
+          </h2>
+          <p className="font-semibold text-primary-orange text-lg">
+            {embed.author}
+          </p>
+        </div>
+        <p className="text-sm font-light font-serif truncate-line-3 md:truncate-line-4">
           {embed.description}
         </p>
       </div>
