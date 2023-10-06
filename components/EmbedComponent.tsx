@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import EmbedFullView from "./EmbedFullView";
+import Image from "next/image";
+import imageData from "../data/images.json";
 
 type EmbedComponentProps = {
   embed: {
@@ -37,6 +39,10 @@ export default function EmbedComponent({ embed }: EmbedComponentProps) {
   const video_id = videoUrl.searchParams.get("v");
   const embedVideoUrl = `https://www.youtube.com/embed/${video_id}`;
 
+  const portfolioImage = imageData.find(
+    (image) => image.name === "current_state-jj_jean_noland_murphy.jpg"
+  );
+
   return (
     <div className="group relative overflow-hidden rounded-2xl shadow-md shadow-mud cursor-default h-[30rem] w-full bg-mud">
       {embed.type === "video" && (
@@ -58,6 +64,17 @@ export default function EmbedComponent({ embed }: EmbedComponentProps) {
           loading="lazy"
           className="object-cover h-3/5 w-full"
         ></iframe>
+      )}
+
+      {embed.type === "image" && (
+        <Image
+          src={portfolioImage?.path ?? ""}
+          alt={portfolioImage?.description ?? ""}
+          width={portfolioImage?.width ?? 1000}
+          height={portfolioImage?.height ?? 1000}
+          loading="lazy"
+          className="object-cover h-3/5 w-full"
+        />
       )}
 
       <div className="flex flex-col absolute bottom-0 bg-gradient-to-t from-mud to-dark-green text-beige w-full p-3 md:p-5 text-left h-2/5">

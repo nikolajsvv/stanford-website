@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { AiFillCloseCircle } from "react-icons/ai";
+import Image from "next/image";
+import imageData from "../data/images.json";
 
 type Content = {
   id: string;
@@ -28,6 +30,10 @@ const backdropVariants = {
   open: { opacity: 0.5 },
   closed: { opacity: 0 },
 };
+
+const portfolioImage = imageData.find(
+  (image) => image.name === "current_state-jj_jean_noland_murphy.jpg"
+);
 
 export default function EmbedFullViewComponent({
   content,
@@ -93,6 +99,16 @@ export default function EmbedFullViewComponent({
           )}
           {content.type === "iframe" && (
             <iframe src={content.link} width="100%" height="360"></iframe>
+          )}
+          {content.type === "image" && (
+            <Image
+              src={portfolioImage?.path ?? ""}
+              alt={portfolioImage?.description ?? ""}
+              width={portfolioImage?.width ?? 1000}
+              height={portfolioImage?.height ?? 1000}
+              loading="lazy"
+              className="object-contain h-full w-full"
+            />
           )}
           <p
             className="mt-4 text-md sm:text-lg font-serif cursor-text whitespace-pre-line"

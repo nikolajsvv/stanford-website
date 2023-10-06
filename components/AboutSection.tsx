@@ -69,7 +69,6 @@ export default function AboutSection() {
                 alt={sustainabilityImage?.description}
                 width={sustainabilityImage.width || 1000}
                 height={sustainabilityImage.height || 1000}
-                layout="responsive"
                 className="object-cover w-full h-full"
               />
             )}
@@ -91,7 +90,6 @@ export default function AboutSection() {
                 alt={sustainabilityImage?.description}
                 width={sustainabilityImage.width || 1000}
                 height={sustainabilityImage.height || 1000}
-                layout="responsive"
                 className="object-cover w-full h-full"
               />
             )}
