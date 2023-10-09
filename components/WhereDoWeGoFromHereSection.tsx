@@ -4,10 +4,10 @@ import essay from "../data/studentContent/essay.json";
 import audio from "../data/studentContent/audio.json";
 import poem from "../data/studentContent/poem.json";
 import EssayComponent from "./EssayComponent";
-import { motion } from "framer-motion";
 import EmbedComponent from "./EmbedComponent";
 import PoemComponent from "./PoemComponent";
 import AudioComponent from "./AudioComponent";
+import { motion } from "framer-motion";
 
 export default function WhereDoWeGoFromHereSection() {
   const titleInfo = {

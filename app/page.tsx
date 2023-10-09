@@ -5,6 +5,7 @@ import HowDoWeMakeSenseOfItAllSection from "@/components/HowDoWeMakeSenseOfItAll
 import LaunchSection from "@/components/LaunchSection";
 import AboutSection from "@/components/AboutSection";
 import { MotionConfig } from "framer-motion";
+import HowDidWeGetHereSection from "@/components/HowDidWeGetHereSection";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <LaunchSection />
         <AboutSection />
         <WhereAreWeSection />
+        <HowDidWeGetHereSection />
         <WhereDoWeGoFromHereSection />
         <HowDoWeMakeSenseOfItAllSection />
       </MotionConfig>

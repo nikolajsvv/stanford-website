@@ -152,5 +152,203 @@
     "link": "https://drive.google.com/file/d/1KB-CrCK1kiiAI9ZT2fKTSor3DTHJVAZL/view?usp=drive_link",
     "width": 426,
     "height": 640
+  },
+  {
+    "id": "img015",
+    "name": "monsoon.jpg",
+    "path": "/images/poems/monsoon.jpg",
+    "author": "iamthedave",
+    "description": "dark stormy clouds on the horizon",
+    "category": "where are we",
+    "link": "https://unsplash.com/photos/suf2PfBNdx4",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img016",
+    "name": "charleston.jpg",
+    "path": "/images/poems/charleston.jpg",
+    "author": "Tyrone Sanders",
+    "description": "charleston street",
+    "category": "where are we",
+    "link": "https://unsplash.com/photos/iJgmwXLc35g",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img017",
+    "name": "earth.jpg",
+    "path": "/images/poems/earth.jpg",
+    "author": "Louis Maniquet",
+    "description": "water droplet that looks like earth",
+    "category": "where are we",
+    "link": "https://unsplash.com/photos/71QXQUSC_Do",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img018",
+    "name": "fall-leaves.jpg",
+    "path": "/images/poems/fall-leaves.jpg",
+    "author": "Courtney Smith",
+    "description": "fall leaves",
+    "category": "where are we",
+    "link": "https://unsplash.com/photos/wrLIzVhWCSI",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img019",
+    "name": "sunlight.jpg",
+    "path": "/images/essays/sunlight.jpg",
+    "author": "Thomas Kinto",
+    "description": "sunlight through clouds",
+    "category": "where are we",
+    "link": "https://unsplash.com/photos/5K2kM0zpNxY",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img020",
+    "name": "apartments.jpg",
+    "path": "/images/essays/apartments.jpg",
+    "author": "Ferdy Aprilyandi",
+    "description": "apartment complex",
+    "category": "where are we",
+    "link": "https://unsplash.com/photos/a-tall-building-with-a-red-sign-on-its-side-_FMYNcvX7eI",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img021",
+    "name": "cow-fields.jpg",
+    "path": "/images/essays/cow-fields.jpg",
+    "author": "Lucas Gallone",
+    "description": "green pasture with cows",
+    "category": "where are we",
+    "link": "https://unsplash.com/photos/Q4QjAPMpJRQ",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img022",
+    "name": "heat.jpg",
+    "path": "/images/essays/heat.jpg",
+    "author": "Alexander Grey",
+    "description": "visual elemnts of heat",
+    "category": "where are we",
+    "link": "https://unsplash.com/photos/wRoyrBjSBzM",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img023",
+    "name": "glaciers.jpg",
+    "path": "/images/poems/glaciers.jpg",
+    "author": "NOAA",
+    "description": "glaciers collapsing",
+    "category": "where are we",
+    "link": "https://unsplash.com/photos/NBwP2jjnATE",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img024",
+    "name": "older.jpg",
+    "path": "/images/poems/older.jpg",
+    "author": "Matt Bennett",
+    "description": "older couple overlooking mountains",
+    "category": "where are we",
+    "link": "https://unsplash.com/photos/78hTqvjYMS4",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img025",
+    "name": "community.jpg",
+    "path": "/images/poems/community.jpg",
+    "author": "Shane Rounce",
+    "description": "hands touching a tree",
+    "category": "where are we",
+    "link": "https://unsplash.com/photos/DNkoNXQti3c",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img026",
+    "name": "crisis.jpg",
+    "path": "/images/poems/crisis.jpg",
+    "author": "Muhammad Numan",
+    "description": "field of garbage",
+    "category": "where are we",
+    "link": "https://unsplash.com/photos/ZVgxiKJlMk0",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img027",
+    "name": "sea.jpg",
+    "path": "/images/essays/sea.jpg",
+    "author": "Thomas Vimare",
+    "description": "sea water",
+    "category": "where are we",
+    "link": "https://unsplash.com/photos/IZ01rjX0XQA",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img028",
+    "name": "pollution.jpg",
+    "path": "/images/essays/pollution.jpg",
+    "author": "Chris LeBoutillier",
+    "description": "factory pollution",
+    "category": "where are we",
+    "link": "https://unsplash.com/photos/TUJud0AWAPI",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img029",
+    "name": "burnt-trees.jpg",
+    "path": "/images/essays/burnt-trees.jpg",
+    "author": "Chad Peltola",
+    "description": "burn trees",
+    "category": "where are we",
+    "link": "https://unsplash.com/photos/Yoqi404MJ8M",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img030",
+    "name": "garden.jpg",
+    "path": "/images/poems/garden.jpg",
+    "author": "Annie Spratt",
+    "description": "garden of flowers",
+    "category": "how did we get here",
+    "link": "https://unsplash.com/photos/VviNSpJuGj0",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img031",
+    "name": "language.jpg",
+    "path": "/images/essays/language.jpg",
+    "author": "Sigmund",
+    "description": "globe",
+    "category": "how did we get here",
+    "link": "https://unsplash.com/photos/ZEZLu8xPpv4",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img032",
+    "name": "american-flag.jpg",
+    "path": "/images/essays/american-flag.jpg",
+    "author": "Samuel Branch",
+    "description": "american flag",
+    "category": "how did we get here",
+    "link": "https://unsplash.com/photos/ZPVisr0s_hQ",
+    "width": 426,
+    "height": 640
   }
 ]
