@@ -1,5 +1,6 @@
 "use client";
 import WhereAreWeSection from "@/components/WhereAreWeSection";
+import WhereDoWeGoFromHereSection from "@/components/WhereDoWeGoFromHereSection";
 import HowDoWeMakeSenseOfItAllSection from "@/components/HowDoWeMakeSenseOfItAllSection";
 import LaunchSection from "@/components/LaunchSection";
 import AboutSection from "@/components/AboutSection";
@@ -12,6 +13,7 @@ export default function Home() {
         <LaunchSection />
         <AboutSection />
         <WhereAreWeSection />
+        <WhereDoWeGoFromHereSection />
         <HowDoWeMakeSenseOfItAllSection />
       </MotionConfig>
     </div>
