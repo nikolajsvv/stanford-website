@@ -44,7 +44,7 @@ export default function EmbedComponent({ embed }: EmbedComponentProps) {
   );
 
   return (
-    <div className="group relative overflow-hidden rounded-2xl shadow-md shadow-mud cursor-default h-[30rem] w-full bg-mud">
+    <div className="group relative overflow-hidden rounded-2xl shadow-md shadow-mud cursor-default h-[31rem] w-full bg-mud">
       {embed.type === "video" && (
         <iframe
           src={`${embedVideoUrl}?autoplay=0&controls=0&modestbranding=1&rel=0`}

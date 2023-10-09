@@ -350,5 +350,27 @@
     "link": "https://unsplash.com/photos/ZPVisr0s_hQ",
     "width": 426,
     "height": 640
+  },
+  {
+    "id": "img033",
+    "name": "snail.jpg",
+    "path": "/images/poems/snail.jpg",
+    "author": "Razvan Cristea",
+    "description": "snail on ground",
+    "category": "how did we get here",
+    "link": "https://unsplash.com/photos/vmykyA7RbU4",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img034",
+    "name": "birds.jpg",
+    "path": "/images/poems/birds.jpg",
+    "author": "Florian Hahn",
+    "description": "birds flying over water",
+    "category": "how did we get here",
+    "link": "https://unsplash.com/photos/tHbt8-7p4eM",
+    "width": 426,
+    "height": 640
   }
 ]

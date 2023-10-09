@@ -153,7 +153,7 @@ export default function AudioComponent({ audio }: AudioComponentProps) {
   return (
     <>
       <motion.div
-        className="group relative w-full pb-[75%] overflow-hidden rounded-2xl shadow-md shadow-mud"
+        className="group relative w-full pb-[75%] overflow-hidden rounded-2xl shadow-md shadow-mud h-[30rem]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}

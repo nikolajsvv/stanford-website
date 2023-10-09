@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-// import DOMPurify from 'isomorphic-dompurify';
 import { AiFillCloseCircle } from "react-icons/ai";
+// import DOMPurify from 'isomorphic-dompurify';
 
 type Essay = {
   id: string;
@@ -11,6 +11,8 @@ type Essay = {
   section: string;
   imageID: string;
   link: string;
+  attachmentType: string;
+  attachmentName: string;
 };
 
 type EssayFullViewProps = {
@@ -58,7 +60,7 @@ export default function EssayFullView({
         initial="closed"
         animate={isOpen ? "open" : "closed"}
       >
-        <div className="bg-white p-10 rounded-md max-w-3xl w-full overflow-y-auto h-screen md:h-3/4 relative">
+        <div className="bg-white p-10 rounded-md max-w-5xl w-full overflow-y-auto h-screen md:h-3/4 relative">
           <div
             className="top-0 right-10 p-5 absolute cursor-pointer"
             onClick={(e) => {
@@ -75,12 +77,43 @@ export default function EssayFullView({
           <p className="text-2xl text-primary-orange font-source-sans-pro capitalize cursor-text">
             {essay.author}
           </p>
-          <p
-            className="mt-4 text-md sm:text-lg font-serif cursor-text whitespace-pre-line"
-            dangerouslySetInnerHTML={{
-              __html: essay.content,
-            }}
-          />
+          {essay.attachmentType === "pdf" ? (
+            <>
+              <div className="mt-4 h-full md:block hidden">
+                <object
+                  data={`/attachments/${essay.attachmentName}`}
+                  type="application/pdf"
+                  className="h-full w-full"
+                >
+                  <iframe
+                    src="https://pdfjs-express.s3-us-west-2.amazonaws.com/docs/choosing-a-pdf-viewer.pdf"
+                    loading="lazy"
+                  >
+                    <p className="text-white text-lg">
+                      This browser does not support PDF.
+                    </p>
+                  </iframe>
+                </object>
+              </div>
+              <div className="md:hidden flex justify-center items-center pt-20">
+                <a
+                  href={`/attachments/${essay.attachmentName}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-dark-green hover:bg-primary-orange text-white rounded-full py-3 px-6 text-lg font-semibold transition duration-200 ease-in-out"
+                >
+                  Open PDF in browser
+                </a>
+              </div>
+            </>
+          ) : (
+            <p
+              className="mt-4 text-md sm:text-lg font-serif cursor-text whitespace-pre-line"
+              dangerouslySetInnerHTML={{
+                __html: essay.content,
+              }}
+            />
+          )}
 
           {essay.description !== "" ? (
             <h2 className="mt-20 text-2xl font-source-sans-pro font-bold">
