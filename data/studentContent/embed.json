@@ -46,5 +46,17 @@
     "type": "image",
     "link": "https://drive.google.com/file/d/1DVEaB-c_STWYB-rLinCTLCcpI7vn42KG/view?usp=drive_link",
     "span": 2
+  },
+  {
+    "id": "embed005",
+    "title": "Sustainability is multifaceted",
+    "author": "Shuvi Jha",
+    "content": "",
+    "description": "Sustainability understands that there are nearly 140 developing countries working to meet their people’s development needs but that such development must be achieved in a way that doesn’t negatively affect future generations, especially against the backdrop of climate change.",
+    "section": "where do we go from here",
+    "imageID": "img056",
+    "type": "link",
+    "link": "https://medium.com/@jhashuvi/sustainability-is-multifaceted-f6f78f1335ae",
+    "span": 2
   }
 ]

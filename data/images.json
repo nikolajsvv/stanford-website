@@ -603,5 +603,71 @@
     "link": "https://drive.google.com/file/d/1DVEaB-c_STWYB-rLinCTLCcpI7vn42KG/view?usp=drive_link",
     "width": 426,
     "height": 640
+  },
+  {
+    "id": "img056",
+    "name": "tropical-river.jpg",
+    "path": "/images/embeds/tropical-river.jpg",
+    "author": "Luca Bravo",
+    "description": "river with evergreen trees around it",
+    "category": "where do we go from here",
+    "link": "https://unsplash.com/photos/body-of-water-surrounded-by-pine-trees-during-daytime-ESkw2ayO2As",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img057",
+    "name": "waterfall.jpg",
+    "path": "/images/essays/waterfall.jpg",
+    "author": "Milada Vigerova",
+    "description": "waterfall in a pool in a river",
+    "category": "how do we make sense of it all",
+    "link": "https://unsplash.com/photos/pQMM63GE7fo",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img058",
+    "name": "pine-tree.jpg",
+    "path": "/images/poems/pine-tree.jpg",
+    "author": "Hans Isaacson",
+    "description": "pine tree branch",
+    "category": "how do we make sense of it all",
+    "link": "https://unsplash.com/photos/kuPm6_LNRC0",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img059",
+    "name": "nature.jpg",
+    "path": "/images/poems/nature.jpg",
+    "author": "Henry Be",
+    "description": "flowers in meadow",
+    "category": "how do we make sense of it all",
+    "link": "https://unsplash.com/photos/IicyiaPYGGI",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img060",
+    "name": "dirt.jpg",
+    "path": "/images/poems/dirt.jpg",
+    "author": "Chris Bair",
+    "description": "dirt",
+    "category": "how do we make sense of it all",
+    "link": "https://unsplash.com/photos/tZep6zlTugg",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img061",
+    "name": "rocks.jpg",
+    "path": "/images/poems/rocks.jpg",
+    "author": "Oliver Paaske",
+    "description": "rocks",
+    "category": "how do we make sense of it all",
+    "link": "https://unsplash.com/photos/66BgmIglPhM",
+    "width": 426,
+    "height": 640
   }
 ]

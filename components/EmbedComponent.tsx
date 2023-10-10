@@ -39,9 +39,7 @@ export default function EmbedComponent({ embed }: EmbedComponentProps) {
   const video_id = videoUrl.searchParams.get("v");
   const embedVideoUrl = `https://www.youtube.com/embed/${video_id}`;
 
-  const portfolioImage = imageData.find(
-    (image) => image.name === "current_state-jj_jean_noland_murphy.jpg"
-  );
+  const portfolioImage = imageData.find((image) => image.id === embed.imageID);
 
   return (
     <div className="group relative overflow-hidden rounded-2xl shadow-md shadow-mud cursor-default h-[31rem] w-full bg-mud">
@@ -64,6 +62,17 @@ export default function EmbedComponent({ embed }: EmbedComponentProps) {
           loading="lazy"
           className="object-cover h-3/5 w-full"
         ></iframe>
+      )}
+
+      {embed.type === "link" && (
+        <Image
+          src={portfolioImage?.path ?? ""}
+          alt={portfolioImage?.description ?? ""}
+          width={portfolioImage?.width ?? 1000}
+          height={portfolioImage?.height ?? 1000}
+          loading="lazy"
+          className="object-fill h-full w-full"
+        />
       )}
 
       {embed.type === "image" && (

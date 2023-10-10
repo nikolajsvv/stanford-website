@@ -31,10 +31,6 @@ const backdropVariants = {
   closed: { opacity: 0 },
 };
 
-const portfolioImage = imageData.find(
-  (image) => image.name === "current_state-jj_jean_noland_murphy.jpg"
-);
-
 export default function EmbedFullViewComponent({
   content,
   isOpen,
@@ -45,6 +41,9 @@ export default function EmbedFullViewComponent({
     e.stopPropagation();
   };
 
+  const portfolioImage = imageData.find(
+    (image) => image.id === content.imageID
+  );
   // const cleanContent = DOMPurify.sanitize(content.content);
   // const cleanDescription = DOMPurify.sanitize(content.content);
 
@@ -100,6 +99,20 @@ export default function EmbedFullViewComponent({
           {content.type === "iframe" && (
             <iframe src={content.link} width="100%" height="360"></iframe>
           )}
+
+          {content.type === "link" && (
+            <div className="flex justify-center items-center pt-10">
+              <a
+                href={content.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-primary-orange hover:bg-secondary-light-orange text-white font-bold py-5 px-10 rounded"
+              >
+                Open Link
+              </a>
+            </div>
+          )}
+
           {content.type === "image" && (
             <Image
               src={portfolioImage?.path ?? ""}
