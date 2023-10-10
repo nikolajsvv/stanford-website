@@ -148,6 +148,12 @@ export default function AudioComponent({ audio }: AudioComponentProps) {
     setShowFullView(!showFullView);
   };
 
+  const handlePDFClick = () => {
+    if (audio.additional) {
+      window.open(`/attachments/${audio.additional}`, "_blank");
+    }
+  };
+
   // Read from audio file to pull
 
   return (
@@ -199,11 +205,19 @@ export default function AudioComponent({ audio }: AudioComponentProps) {
             )}
           </div>
           <p
-            className="cursor-pointer p-4 font-extralight text-beige hover:font-normal hover:text-light-orange"
+            className="cursor-pointer p-4 font-semibold uppercase text-beige hover:font-bold hover:text-primary-orange"
             onClick={handleViewClick}
           >
             Transcript
           </p>
+          {audio.additional && (
+            <button
+              onClick={handlePDFClick}
+              className="bg-primary-orange text-white p-2 rounded"
+            >
+              Learn More
+            </button>
+          )}
           <div className="text-beige flex justify-between w-full absolute bottom-4 font-extralight">
             <div className="text-left left-0 pl-2">
               {formatTime(currentTime)}

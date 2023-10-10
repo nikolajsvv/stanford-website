@@ -669,5 +669,104 @@
     "link": "https://unsplash.com/photos/66BgmIglPhM",
     "width": 426,
     "height": 640
+  },
+  {
+    "id": "img062",
+    "name": "wind-mills.jpg",
+    "path": "/images/poems/wind-mills.jpg",
+    "author": "Karsten Würth",
+    "description": "wind mills in a field",
+    "category": "how do we make sense of it all",
+    "link": "https://unsplash.com/photos/0w-uTa0Xz7w",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img063",
+    "name": "leaves.jpg",
+    "path": "/images/poems/leaves.jpg",
+    "author": "Markus Spiske",
+    "description": "leaves with light shining through them",
+    "category": "how do we make sense of it all",
+    "link": "https://unsplash.com/photos/6MB_jBwteIg",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img064",
+    "name": "stanford.jpg",
+    "path": "/images/audio/stanford.jpg",
+    "author": "Jean Carlo Emer",
+    "description": "stanford campus",
+    "category": "how do we make sense of it all",
+    "link": "https://unsplash.com/photos/KSlkz9C6AdE",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img065",
+    "name": "gratitude.jpg",
+    "path": "/images/audio/gratitude.jpg",
+    "author": "Aziz Acharki",
+    "description": "man standing on a rising/setting sun in background",
+    "category": "how do we make sense of it all",
+    "link": "https://unsplash.com/photos/kfbgt78ZsVE",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img066",
+    "name": "birds-pink-sky.jpg",
+    "path": "/images/poems/birds-pink-sky.jpg",
+    "author": "Gauravdeep Singh Bansal",
+    "description": "birds flying with a pink and blue sky",
+    "category": "how do we make sense of it all",
+    "link": "https://unsplash.com/photos/caC13DIDe9E",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img067",
+    "name": "windmills-field.jpg",
+    "path": "/images/poems/windmills-field.jpg",
+    "author": "Karsten Würth",
+    "description": "windmills in a field",
+    "category": "how do we make sense of it all",
+    "link": "https://unsplash.com/photos/ZKWgoRUYuMk",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img068",
+    "name": "waste.jpg",
+    "path": "/images/essays/waste.jpg",
+    "author": "Sylwia Bartyzel",
+    "description": "garbage at foothills of mountain",
+    "category": "how do we make sense of it all",
+    "link": "https://unsplash.com/photos/amAhBrvmVQc",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img069",
+    "name": "alaska.jpg",
+    "path": "/images/poems/alaska.jpg",
+    "author": "Tobias Tullius",
+    "description": "view of alaska mountain range",
+    "category": "how do we make sense of it all",
+    "link": "https://unsplash.com/photos/QTEZfr5xKF8",
+    "width": 426,
+    "height": 640
+  },
+  {
+    "id": "img070",
+    "name": "france.jpg",
+    "path": "/images/poems/france.jpg",
+    "author": "Dwain Norsa",
+    "description": "eiffel tower with pink trees",
+    "category": "how do we make sense of it all",
+    "link": "https://unsplash.com/photos/Jd1FUJssNFE",
+    "width": 426,
+    "height": 640
   }
 ]

@@ -15,7 +15,7 @@ type EssayComponentProps = {
     imageID: string;
     link: string;
     attachmentType?: string;
-    attachmentName?: string;
+    attachementName?: string;
   };
 };
 
@@ -29,7 +29,7 @@ type essay = {
   imageID: string;
   link: string;
   attachmentType?: string;
-  attachmentName?: string;
+  attachementName?: string;
 };
 
 export default function EssayComponent({ essay }: EssayComponentProps) {
@@ -54,6 +54,12 @@ export default function EssayComponent({ essay }: EssayComponentProps) {
   };
 
   const essayImage = getImageByEssay(essay);
+
+  const handlePDFClick = () => {
+    if (essay.attachementName) {
+      window.open(`/attachments/${essay.attachementName}`, "_blank");
+    }
+  };
 
   useEffect(() => {
     return () => {
@@ -103,12 +109,22 @@ export default function EssayComponent({ essay }: EssayComponentProps) {
             __html: essay.content,
           }}
         />
-        <p
-          className="text-base sm:text-md text-right cursor-pointer font-semibold hover:text-light-orange"
-          onClick={handleViewClick}
-        >
-          Read More
-        </p>
+        {essay.attachmentType === "pdf" && (
+          <p
+            className="text-base sm:text-md text-right cursor-pointer font-semibold hover:text-primary-orange"
+            onClick={handlePDFClick}
+          >
+            Read More
+          </p>
+        )}
+        {essay.attachmentType !== "pdf" && (
+          <p
+            className="text-base sm:text-md text-right cursor-pointer font-semibold hover:text-primary-orange"
+            onClick={handleViewClick}
+          >
+            Read More
+          </p>
+        )}
       </div>
       {showFullView && (
         <div className="fixed inset-0 flex items-center justify-center z-50 pt-10 backdrop-blur-sm overlay">
