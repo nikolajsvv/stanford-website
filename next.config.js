@@ -1,4 +1,17 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
 
-module.exports = nextConfig
+module.exports = {
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.module.rules.push({
+        test: /\.mp3$/,
+        use: "file-loader",
+      });
+    }
+
+    return config;
+  },
+  images: {
+    domains: ["i.pravatar.cc"],
+  },
+};
