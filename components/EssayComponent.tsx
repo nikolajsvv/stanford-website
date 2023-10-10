@@ -14,8 +14,8 @@ type EssayComponentProps = {
     section: string;
     imageID: string;
     link: string;
-    attachmentType: string;
-    attachmentName: string;
+    attachmentType?: string;
+    attachmentName?: string;
   };
 };
 
@@ -28,8 +28,8 @@ type essay = {
   section: string;
   imageID: string;
   link: string;
-  attachmentType: string;
-  attachmentName: string;
+  attachmentType?: string;
+  attachmentName?: string;
 };
 
 export default function EssayComponent({ essay }: EssayComponentProps) {

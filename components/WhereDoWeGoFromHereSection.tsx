@@ -77,6 +77,7 @@ export default function WhereDoWeGoFromHereSection() {
               </div>
             );
           })}
+
           {filteredAudio.map((audio) => {
             let spanClass = audio.span ? `col-span-${audio.span}` : "";
             return (
