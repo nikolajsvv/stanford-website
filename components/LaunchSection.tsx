@@ -26,9 +26,8 @@ export default function LaunchSection() {
       <div className="absolute inset-0 z-0">
         <Image
           src={path}
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
+          fill={true}
+          className="object-cover object-center fill-inherit"
           alt="Background"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(58,81,52,.4)] to-[#fefae7]"></div>

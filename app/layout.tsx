@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { source_sans_3, source_serif_4, inter } from "./fonts";
 import Navbar from "../components/Navbar";
 
-
 export const metadata: Metadata = {
   title: "Environmental Humanities",
 };

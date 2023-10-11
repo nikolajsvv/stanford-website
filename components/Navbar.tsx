@@ -13,6 +13,13 @@ export default function Navbar() {
   const sections: Section[] = [
     { title: "", id: "launch" },
     { title: "", id: "about" },
+    { title: "Where Are We", id: "where-are-we" },
+    { title: "How Did We Get Here", id: "how-did-we-get-here" },
+    { title: "Where Do We Go From Here", id: "where-do-we-go-from-here" },
+    {
+      title: "How Do We Make Sense Of It All",
+      id: "how-do-we-make-sense-of-it-all",
+    },
   ];
 
   const options = {
@@ -58,17 +65,20 @@ export default function Navbar() {
     };
   }, [elements]);
 
-  const currentSectionTitle = currentSection === "launch" ? "" : currentSection;
+  const currentSectionTitle =
+    currentSection !== "launch" && currentSection !== "about"
+      ? sections.find((section) => section.id === currentSection)?.title
+      : "";
   return (
     <div
       ref={scope}
-      className="flex fixed z-50 w-full h-16 justify-center items-center p-4"
+      className="flex fixed z-50 w-full h-16 justify-center items-center p-4 bg-beige"
     >
       {/* HAMBURGER BUTTON */}
       <Menu setIsOpen={setIsOpen} sections={sections} />
       <MenuButton toggle={() => setIsOpen(!isOpen)} />
 
-      <div className="text-center text-lg pl-12 sm:pl-0 text-dark-green font-bold uppercase sm:text-2xl md:text-3xl lg:text-4xl">
+      <div className="text-center text-lg pl-12 sm:pl-0 text-dark-green font-bold uppercase sm:text-2xl md:text-3xl lg:text-4xl ">
         {currentSectionTitle}
       </div>
     </div>

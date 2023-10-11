@@ -17,9 +17,8 @@ export default function SectionTitle({ sectionInfo }: Props) {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/sectionTitle/sectionTitleImage.webp"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
+          className="object-cover object-center fill-inherit"
+          fill={true}
           alt="Background"
           loading="lazy"
         />
