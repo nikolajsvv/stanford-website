@@ -94,7 +94,10 @@ export default function EssayComponent({ essay }: EssayComponentProps) {
       {/* Title, Author, Content */}
       <div className="flex flex-col absolute inset-0 items-left justify-end text-beige p-3 md:p-5">
         <div className="space-y-1">
-          <h2 className="text-xl lg:text-2xl font-bold uppercase">
+          <h2
+            className="text-xl lg:text-2xl font-bold cursor-pointer uppercase"
+            onClick={handleViewClick}
+          >
             <span className="bg-gradient-to-r from-green-300 to-green-200 bg-[length:0px_5px] bg-left-bottom bg-no-repeat duration-500 hover:bg-[length:100%_10px] group-hover:bg-[length:100%_8px]">
               {essay.title}
             </span>
