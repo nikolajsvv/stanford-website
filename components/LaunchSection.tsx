@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Image from "next/image";
 import imagesData from "../data/images.json";
 
 export default function LaunchSection() {
@@ -19,14 +20,18 @@ export default function LaunchSection() {
     <motion.section
       ref={ref}
       id="launch"
-      className="w-full h-full flex flex-col justify-center items-center"
+      className="w-full h-full flex flex-col justify-center items-center relative"
     >
-      <div
-        style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(58, 81, 52, .4), #fefae7), url(${path})`,
-        }}
-        className="absolute inset-0 bg-cover bg-no-repeat"
-      />
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={path}
+          fill={true}
+          className="object-cover object-center fill-inherit"
+          alt="Background"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(58,81,52,.4)] to-[#fefae7]"></div>
+      </div>
       <motion.div className="absolute p-4 text-beige flex flex-col text-left">
         <motion.h1
           className="text-6xl md:text-8xl xl:text-9xl uppercase font-sans font-extrabold"
