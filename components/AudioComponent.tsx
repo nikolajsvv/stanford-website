@@ -212,12 +212,14 @@ export default function AudioComponent({ audio }: AudioComponentProps) {
               Learn More
             </button>
           )}
-          <p
-            className="cursor-pointer p-4 font-semibold uppercase text-beige hover:font-bold hover:text-primary-orange"
-            onClick={handleViewClick}
-          >
-            Transcript
-          </p>
+          {audio.transcript && (
+            <p
+              className="cursor-pointer p-4 font-semibold uppercase text-beige hover:font-bold hover:text-primary-orange"
+              onClick={handleViewClick}
+            >
+              Transcript
+            </p>
+          )}
           <div className="text-beige flex justify-between w-full absolute bottom-4 font-extralight">
             <div className="text-left left-0 pl-2">
               {formatTime(currentTime)}
