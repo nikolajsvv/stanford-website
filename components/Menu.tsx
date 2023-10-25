@@ -13,9 +13,10 @@ export default function Menu({ setIsOpen, sections }: any) {
             return (
               <li
                 key={section.id}
-                className="block transition ease-in-out hover:text-[31px] duration-300 hover:text-primary-orange"
+                className="block transition ease-in-out duration-300 hover:text-primary-orange"
               >
                 <Link
+                  aria-label="navigation"
                   activeClass="active"
                   to={section.id.replace("#", "")}
                   spy={true}

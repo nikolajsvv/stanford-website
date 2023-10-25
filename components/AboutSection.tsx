@@ -111,13 +111,6 @@ export default function AboutSection() {
           </div>
         </motion.div>
       </div>
-      {/* <div className='flex flex-col justify-center items-center font-bold'>
-				<h1 className='text-8xl'>COLLECTIONS</h1>
-				<p>Where are we</p>
-				<p>How do we make sense of it all</p>
-				<p>How did we get here</p>
-				<p>Where are we</p>
-			</div> */}
     </div>
   );
 }

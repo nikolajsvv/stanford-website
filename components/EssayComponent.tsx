@@ -96,6 +96,7 @@ export default function EssayComponent({ essay }: EssayComponentProps) {
         <div className="space-y-1">
           <h2
             className="text-xl lg:text-2xl font-bold cursor-pointer uppercase"
+            arial-label="navigation"
             onClick={handleViewClick}
           >
             <span className="bg-gradient-to-r from-green-300 to-green-200 bg-[length:0px_5px] bg-left-bottom bg-no-repeat duration-500 hover:bg-[length:100%_10px] group-hover:bg-[length:100%_8px]">
@@ -115,6 +116,7 @@ export default function EssayComponent({ essay }: EssayComponentProps) {
         {essay.attachmentType === "pdf" && (
           <p
             className="text-base sm:text-md text-right cursor-pointer font-semibold hover:text-primary-orange"
+            arial-label="navigation"
             onClick={handlePDFClick}
           >
             Read More
@@ -123,6 +125,7 @@ export default function EssayComponent({ essay }: EssayComponentProps) {
         {essay.attachmentType !== "pdf" && (
           <p
             className="text-base sm:text-md text-right cursor-pointer font-semibold hover:text-primary-orange"
+            arial-label="navigation"
             onClick={handleViewClick}
           >
             Read More

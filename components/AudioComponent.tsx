@@ -196,17 +196,20 @@ export default function AudioComponent({ audio }: AudioComponentProps) {
               <HiPlayCircle
                 className="h-12 w-12 text-white cursor-pointer rounded-full transition-all duration-300 hover:scale-125"
                 onClick={playAudio}
+                aria-label="button"
               />
             ) : (
               <HiMiniPauseCircle
                 className="h-12 w-12 text-white cursor-pointer rounded-full transition-all duration-300 hover:scale-125"
                 onClick={pauseAudio}
+                aria-label="button"
               />
             )}
           </div>
           {audio.additional && (
             <button
               onClick={handlePDFClick}
+              aria-label="navigation"
               className="bg-primary-orange text-white p-2 rounded"
             >
               Learn More
@@ -216,6 +219,7 @@ export default function AudioComponent({ audio }: AudioComponentProps) {
             <p
               className="cursor-pointer p-4 font-semibold uppercase text-beige hover:font-bold hover:text-primary-orange"
               onClick={handleViewClick}
+              aria-label="navigation"
             >
               Transcript
             </p>
@@ -233,6 +237,7 @@ export default function AudioComponent({ audio }: AudioComponentProps) {
           className="absolute bottom-0 left-0 w-full h-4 overflow-hidden rounded-b-3xl cursor-pointer"
           ref={progressBarRef}
           onClick={handleProgressBarClick}
+          aria-label="button"
         >
           <div className="h-full bg-dark-green rounded-b-3xl">
             <motion.div

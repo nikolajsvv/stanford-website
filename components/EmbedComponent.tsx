@@ -91,6 +91,7 @@ export default function EmbedComponent({ embed }: EmbedComponentProps) {
           <h2
             className="text-xl lg:text-2xl font-bold uppercase cursor-pointer"
             onClick={handleViewClick}
+            arial-label="navigation"
           >
             <span className="bg-gradient-to-r from-green-300 to-green-200 bg-[length:0px_5px] bg-left-bottom bg-no-repeat duration-500 hover:bg-[length:100%_10px] group-hover:bg-[length:100%_8px]">
               {embed.title}
@@ -107,6 +108,7 @@ export default function EmbedComponent({ embed }: EmbedComponentProps) {
       <p
         className="text-beige absolute bottom-1 right-5 text-right font-semibold hover:font-bold hover:text-light-orange cursor-pointer font-sans "
         onClick={handleViewClick}
+        arial-label="navigation"
       >
         Learn More
       </p>

@@ -59,6 +59,7 @@ export default function AudioTranscriptDisplay({
         <div className="bg-white p-10 rounded-md max-w-3xl w-full overflow-y-auto h-screen md:h-3/4 relative">
           <div
             className="top-0 right-10 p-5 absolute cursor-pointer"
+            arial-label="navigation"
             onClick={(e) => {
               e.stopPropagation();
               onClose();

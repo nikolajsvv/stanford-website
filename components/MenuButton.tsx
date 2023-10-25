@@ -5,6 +5,7 @@ export default function MenuButton({ toggle }: any) {
   return (
     <div className="fixed flex items-center justify-start gap-4 top-3 left-3 z-50">
       <motion.button
+        aria-label="button"
         onClick={toggle}
         className="p-3 bg-dark-green cursor-pointer rounded-2xl"
         whileHover={{ scale: 1.2 }}

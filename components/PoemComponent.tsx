@@ -94,6 +94,7 @@ export default function PoemComponent({ poem }: PoemComponentProps) {
       {poem.description && (
         <p
           onClick={handleViewClick}
+          arial-label="button"
           className="text-center w-full text-beige bg-mud bg-opacity-30 absolute bottom-0 p-2 hover:font-semibold hover:bg-opacity-50 hover:cursor-pointer"
         >
           Description
