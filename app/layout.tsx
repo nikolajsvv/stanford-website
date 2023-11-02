@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 
 export const metadata: Metadata = {
   title: "Environmental Humanities",
+  description: `This website showcases student perspectives from Stanford University's Fall 2022 course: "Environmental Humanities: Finding Our Place on a Changing Planet” [SUSTAIN 140 | BIO 184 | ENGLISH 140D]`,
 };
 
 export default function RootLayout({
