@@ -45,6 +45,7 @@ export default function EmbedComponent({ embed }: EmbedComponentProps) {
     <div className="group relative overflow-hidden rounded-2xl shadow-md shadow-mud cursor-default h-[31rem] w-full bg-mud">
       {embed.type === "video" && (
         <iframe
+          title={embed.title}
           src={`${embedVideoUrl}?autoplay=0&controls=0&modestbranding=1&rel=0`}
           width="100%"
           height="100%"
@@ -56,6 +57,7 @@ export default function EmbedComponent({ embed }: EmbedComponentProps) {
       )}
       {embed.type === "iframe" && (
         <iframe
+          title={embed.title}
           src={embed.link}
           width="100%"
           height="100%"
