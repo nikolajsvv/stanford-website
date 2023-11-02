@@ -19,7 +19,7 @@ export default function SectionTitle({ sectionInfo }: Props) {
           src="/images/sectionTitle/sectionTitleImage.webp"
           className="object-cover object-center fill-inherit"
           fill={true}
-          alt="Background"
+          alt="background image displaying trees in a valley"
           loading="lazy"
         />
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>

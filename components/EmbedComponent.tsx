@@ -45,6 +45,7 @@ export default function EmbedComponent({ embed }: EmbedComponentProps) {
     <div className="group relative overflow-hidden rounded-2xl shadow-md shadow-mud cursor-default h-[31rem] w-full bg-mud">
       {embed.type === "video" && (
         <iframe
+          title={embed.title}
           src={`${embedVideoUrl}?autoplay=0&controls=0&modestbranding=1&rel=0`}
           width="100%"
           height="100%"
@@ -56,6 +57,7 @@ export default function EmbedComponent({ embed }: EmbedComponentProps) {
       )}
       {embed.type === "iframe" && (
         <iframe
+          title={embed.title}
           src={embed.link}
           width="100%"
           height="100%"
@@ -91,6 +93,7 @@ export default function EmbedComponent({ embed }: EmbedComponentProps) {
           <h2
             className="text-xl lg:text-2xl font-bold uppercase cursor-pointer"
             onClick={handleViewClick}
+            arial-label="navigation"
           >
             <span className="bg-gradient-to-r from-green-300 to-green-200 bg-[length:0px_5px] bg-left-bottom bg-no-repeat duration-500 hover:bg-[length:100%_10px] group-hover:bg-[length:100%_8px]">
               {embed.title}
@@ -107,6 +110,7 @@ export default function EmbedComponent({ embed }: EmbedComponentProps) {
       <p
         className="text-beige absolute bottom-1 right-5 text-right font-semibold hover:font-bold hover:text-light-orange cursor-pointer font-sans "
         onClick={handleViewClick}
+        arial-label="navigation"
       >
         Learn More
       </p>

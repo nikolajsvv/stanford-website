@@ -75,8 +75,8 @@ export default function Navbar() {
       className="flex fixed z-50 w-full h-16 justify-center items-center p-4 bg-beige"
     >
       {/* HAMBURGER BUTTON */}
-      <Menu setIsOpen={setIsOpen} sections={sections} />
-      <MenuButton toggle={() => setIsOpen(!isOpen)} />
+      <Menu setIsOpen={setIsOpen} sections={sections} arial-label="button" />
+      <MenuButton toggle={() => setIsOpen(!isOpen)} arial-label="button" />
 
       <div className="text-center text-lg pl-12 sm:pl-0 text-dark-green font-bold uppercase sm:text-2xl md:text-3xl lg:text-4xl ">
         {currentSectionTitle}
