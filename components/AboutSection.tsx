@@ -11,54 +11,6 @@ export default function AboutSection() {
 
   return (
     <div className="min-h-screen mx-auto py-40">
-      <section className="flex flex-col justify-center items-center ">
-        <div className="w-full md:w-3/4">
-          <motion.h1
-            variants={{
-              hidden: { opacity: 0, x: -75 },
-              visibile: { opacity: 1, x: 0 },
-            }}
-            initial="hidden"
-            whileInView="visibile"
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-3xl md:text-5xl lg:text-6xl uppercase font-bold text-dark-green text-center md:text-center hover:drop-shadow-xl"
-          >
-            Imagine you woke up tomorrow in a perfectly sustainable society
-          </motion.h1>
-        </div>
-
-        <div className="flex flex-col items-center justify-center font-light text-lg md:text-2xl text-center space-y-5 cursor-default text-mud mt-10 p-10 md:p-4 mb-20 ">
-          <motion.p
-            className="hover:font-normal transition-all duration-300"
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1 }}
-            viewport={{ once: true }}
-          >
-            What would this look like, and what would it have taken to get here?
-          </motion.p>
-          <motion.p
-            className="hover:font-normal transition-all duration-300"
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.5 }}
-            viewport={{ once: true }}
-          >
-            Would our work be complete – or is there a chance we could have
-            missed the point?
-          </motion.p>
-          <motion.p
-            className="hover:font-normal transition-all duration-300"
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 2 }}
-            viewport={{ once: true }}
-          >
-            What does sustainability even mean?
-          </motion.p>
-        </div>
-      </section>
       {/* Image with first content */}
       <div className="relative">
         <motion.div className="flex flex-col md:flex-row justify-center items-center w-full relative md:sticky md:top-0 bg-dark-green text-beige">
