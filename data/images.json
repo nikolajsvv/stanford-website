@@ -7,8 +7,8 @@
     "description": "A beautiful display of an evergreen forest in between mountains",
     "category": "launch",
     "link": "https://unsplash.com/photos/ugnrXk1129g",
-    "width": 400,
-    "height": 300
+    "width": 500,
+    "height": 500
   },
   {
     "id": "img002",
@@ -18,8 +18,8 @@
     "description": "Rolling green grass hills with wind turbines in the distance",
     "category": "about",
     "link": "https://unsplash.com/photos/WYGhTLym344",
-    "width": 400,
-    "height": 300
+    "width": 500,
+    "height": 400
   },
   {
     "id": "img003",
@@ -768,5 +768,38 @@
     "link": "https://unsplash.com/photos/Jd1FUJssNFE",
     "width": 426,
     "height": 640
+  },
+  {
+    "id": "img071",
+    "name": "branches.jpg",
+    "path": "/images/about/branches.jpg",
+    "author": "Andreas Rasmussen",
+    "description": "branches",
+    "category": "about",
+    "link": "https://unsplash.com/photos/green-leafed-tree-SLrpRVmD5L0",
+    "width": 400,
+    "height": 300
+  },
+  {
+    "id": "img072",
+    "name": "mountain.jpg",
+    "path": "/images/about/mountain.jpg",
+    "author": "eberhard 🖐 grossgasteiger",
+    "description": "mountain",
+    "category": "about",
+    "link": "https://unsplash.com/photos/a-snow-covered-mountain-with-a-full-moon-in-the-distance-43FNAozOX4w",
+    "width": 400,
+    "height": 300
+  },
+  {
+    "id": "img073",
+    "name": "owl.jpg",
+    "path": "/images/about/owl.jpg",
+    "author": "Lino Thaesler",
+    "description": "owl",
+    "category": "about",
+    "link": "https://unsplash.com/photos/an-owl-perched-on-a-tree-branch-in-a-forest-pmhMW_BYEoA",
+    "width": 400,
+    "height": 300
   }
 ]

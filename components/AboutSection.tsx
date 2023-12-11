@@ -9,18 +9,20 @@ export default function AboutSection() {
     (image) => image.name === "about-sustainable-planet.jpg"
   );
 
+  const branches = imageData.find((image) => image.name === "branches.jpg");
+
   return (
     <div className="min-h-screen mx-auto py-40">
       {/* Image with first content */}
       <div className="relative">
         <motion.div className="flex flex-col md:flex-row justify-center items-center w-full relative md:sticky md:top-0 bg-dark-green text-beige">
-          <div className="w-full md:w-1/2 flex-shrink-0">
-            {sustainabilityImage && (
+          <div className="w-full md:w-1/2 max-h-[500px] overflow-hidden">
+            {branches && (
               <Image
-                src={sustainabilityImage.path}
-                alt={sustainabilityImage?.description}
-                width={sustainabilityImage.width || 1000}
-                height={sustainabilityImage.height || 1000}
+                src={branches.path}
+                alt={branches?.description}
+                width={branches.width || 400}
+                height={branches.height || 300}
                 className="object-cover w-full h-full"
               />
             )}
@@ -35,7 +37,7 @@ export default function AboutSection() {
           </motion.div>
         </motion.div>
         <motion.div className="flex flex-col md:flex-row justify-center items-center w-full h-1/2 relative md:sticky md:top-0 bg-beige ">
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-1/2 max-h-[500px] overflow-hidden">
             {sustainabilityImage && (
               <Image
                 src={sustainabilityImage.path}
